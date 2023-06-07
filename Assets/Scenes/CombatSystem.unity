@@ -1877,22 +1877,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a236e36d2f33dd443a0885361932b2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p_hearts:
+  player_hearts:
   - {fileID: 954667092}
   - {fileID: 453824889}
   - {fileID: 1776311343}
   - {fileID: 418357741}
   - {fileID: 1419705040}
-  p_numOfHearts: 5
-  s_hearts:
+  player_numOfHearts: 5
+  shadow_hearts:
   - {fileID: 867715277}
   - {fileID: 476962426}
-  s_numOfHearts: 2
-  b1: {fileID: 2041012867}
-  b2: {fileID: 438681506}
-  b3: {fileID: 892176141}
-  typingDelay: 0.05
-  speedMultiplier: 0
+  shadow_numOfHearts: 2
+  button1: {fileID: 2041012867}
+  button2: {fileID: 438681506}
+  button3: {fileID: 892176141}
   text: {fileID: 79960693}
 --- !u!1 &1361703422
 GameObject:

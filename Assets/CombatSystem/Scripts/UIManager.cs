@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class UIManager : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
+        if(StatsManager.Instance.PlayerHealth<=0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         if (StatsManager.Instance.PlayerHealth < player_numOfHearts)
         {
             player_numOfHearts = StatsManager.Instance.PlayerHealth;
