@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class IceInteraction : Interaction
 {
+    InputManager inputManager;
+
+    private void Start()
+    {
+        inputManager = GameManager.Instance.IM;
+
+        
+    }
+
 
     void Update()
     {
@@ -12,15 +21,10 @@ public class IceInteraction : Interaction
 
     private void Ice()
     {
-        if (!Input.GetKeyDown(KeyCode.E))
-        {
-            return;
-        }
-
+        if (inputManager.Ice.ReadValue<float>() < 1f) return;
 
         Collider collider = GetClosestInteractable();
 
-        Debug.Log(collider.name);
         if (collider == null)
         {
             return;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PushableCube : MonoBehaviour, IIceable
 {
+
+    [SerializeField] bool ignoreInputWhenOnPressurePlate;
     public bool IsIced { get => isIced; set => isIced = value; }
 
     private bool isIced;
@@ -11,6 +13,8 @@ public class PushableCube : MonoBehaviour, IIceable
 
     private Rigidbody body;
     private Animator animator;
+
+    private bool onPressurePlate;
 
     private void Awake()
     {
@@ -21,8 +25,9 @@ public class PushableCube : MonoBehaviour, IIceable
 
     public void Ice()
     {
-        if (isIced || ignoreInput) return;
+        if (isIced || ignoreInput || onPressurePlate) return;
         ignoreInput = true;
+
         animator.SetTrigger("Ice");
     }
 
@@ -30,6 +35,8 @@ public class PushableCube : MonoBehaviour, IIceable
     {
         if (!isIced || ignoreInput) return;
         ignoreInput = true;
+        body.mass = 100000f;
+        //body.velocity = Vector3.zero;
         animator.SetTrigger("UnIce");
 
     }
@@ -43,8 +50,18 @@ public class PushableCube : MonoBehaviour, IIceable
 
     public void AnimationUnIce()
     {
-        body.mass = 1000000f;
         isIced = false;
         ignoreInput = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("PressurePlate"))
+        {
+            UnIce();
+
+            if(ignoreInputWhenOnPressurePlate)
+                onPressurePlate = true;
+        }
     }
 }
