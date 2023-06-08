@@ -14,7 +14,7 @@ public class UICombat : MonoBehaviour
     [SerializeField] TextMeshProUGUI domandaTxt, risposta1Txt, risposta2Txt, risposta3Txt;
     #region Answers
     public GameObject button1, button2, button3, spiegazione;
-    private string[] ris = new string[] { "Muffin", "Crostata", "Biscotti", "Budino", "Crapfen" };
+    private string[] ris = new string[] { "Muffin", "Crostata", "Biscotti", "Budino", "Krapfen" };
     private Dictionary<string, string> risposte;
     private string rispostaGiusta;
     private string rispostaAttuale;
@@ -27,7 +27,7 @@ public class UICombat : MonoBehaviour
         "Ciao, mi chiamo Alfonso e odio la CROSTATA",
         "Ciao, mi chiamo Gesualdo e mi fanno schifo i BISCOTTI",
         "Ciao, mi chiamo Ingrid e non sopporto il BUDINO",
-        "Ciao, mi chiamo Doris e sono una CRAPFEN-hater"
+        "Ciao, mi chiamo Doris e sono una KRAPFEN-hater"
     };
     #endregion
     #region Health
@@ -137,7 +137,7 @@ public class UICombat : MonoBehaviour
             domandaTxt.text = dom[randomIndex];
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
-            colors.selectedColor = Color.green;
+            colors.selectedColor = Color.white;
             button1.GetComponent<Button>().colors = colors;
             MakeDamage(1);
         }
@@ -150,6 +150,8 @@ public class UICombat : MonoBehaviour
         }
         if (mistakesCounter == 2)
         {
+            colors.selectedColor = Color.white;
+            button1.GetComponent<Button>().colors = colors;
             TakeDamage(1);
             randomIndex = UnityEngine.Random.Range(0, dom.Count());
             domandaTxt.text = dom[randomIndex];
@@ -169,7 +171,7 @@ public class UICombat : MonoBehaviour
             domandaTxt.text = dom[randomIndex];
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
-            colors.selectedColor = Color.green;
+            colors.selectedColor = Color.white;
             button2.GetComponent<Button>().colors = colors;
             MakeDamage(1);
         }
@@ -188,6 +190,8 @@ public class UICombat : MonoBehaviour
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
             mistakesCounter = 0;
+            colors.selectedColor = Color.white;
+            button2.GetComponent<Button>().colors = colors;
         }
     }
     public void Answer3()
@@ -201,7 +205,7 @@ public class UICombat : MonoBehaviour
             domandaTxt.text = dom[randomIndex];
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
-            colors.selectedColor = Color.green;
+            colors.selectedColor = Color.white;
             button3.GetComponent<Button>().colors = colors;
             MakeDamage(1);
         }
@@ -220,6 +224,8 @@ public class UICombat : MonoBehaviour
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
             mistakesCounter = 0;
+            colors.selectedColor = Color.white;
+            button3.GetComponent<Button>().colors = colors;
         }
     }
     void CheckRightAnswer()
