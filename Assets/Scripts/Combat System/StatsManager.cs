@@ -16,13 +16,13 @@ public class StatsManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        UIManager.OnRightChoice += MakeDamage;
-        UIManager.OnWrongChoice += TakeDamage;
+        UICombat.OnRightChoice += MakeDamage;
+        UICombat.OnWrongChoice += TakeDamage;
     }
     private void OnDisable()
     {
-        UIManager.OnRightChoice -= MakeDamage;
-        UIManager.OnWrongChoice -= TakeDamage;
+        UICombat.OnRightChoice -= MakeDamage;
+        UICombat.OnWrongChoice -= TakeDamage;
     }
     private void TakeDamage()
     {
