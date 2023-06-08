@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     InputManager iM;
     Rigidbody rb;
 
+    [SerializeField] Transform cam;
+
 
     Vector3 movement;
     [SerializeField]float speed;
@@ -37,4 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = dir * speed * Time.fixedDeltaTime;
     }
+
+
 }
