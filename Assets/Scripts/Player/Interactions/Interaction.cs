@@ -7,6 +7,13 @@ public abstract class Interaction : MonoBehaviour
     [SerializeField] private LayerMask interactMask;
     [SerializeField] private float range;
 
+    protected InputManager inputManager;
+
+    private void Start()
+    {
+        inputManager = GameManager.Instance.IM;
+    }
+
     protected Collider GetClosestInteractable()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, range, interactMask);

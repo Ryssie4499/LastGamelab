@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class IceInteraction : Interaction
 {
-    InputManager inputManager;
-
-    private void Start()
-    {
-        inputManager = GameManager.Instance.IM;
-
-        
-    }
-
-
     void Update()
     {
         Ice();
