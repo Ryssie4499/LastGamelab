@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class Interaction : MonoBehaviour
 {
     [SerializeField] private LayerMask interactMask;
-    [SerializeField] private float range;
+    [SerializeField] private Vector3 hitboxPosition;
+    [SerializeField] private Vector3 hitboxDimension;
 
     protected InputManager inputManager;
 
@@ -16,7 +17,7 @@ public abstract class Interaction : MonoBehaviour
 
     protected Collider GetClosestInteractable()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, range, interactMask);
+        Collider[] colliders = Physics.OverlapBox(CalculateHitboxPosition(), hitboxDimension, transform.rotation, interactMask);
         if (colliders.Length == 0) return null;
 
         Collider closest = null;
@@ -36,6 +37,11 @@ public abstract class Interaction : MonoBehaviour
         return closest;
     }
 
+    private Vector3 CalculateHitboxPosition()
+    {
+        return transform.position + transform.right * hitboxPosition.x + transform.up * hitboxPosition.y + transform.forward * hitboxPosition.z;
+    }
+
 #if UNITY_EDITOR
     [Header("Debug")]
     [SerializeField] private bool showGizmos;
@@ -45,7 +51,7 @@ public abstract class Interaction : MonoBehaviour
         if (!showGizmos) return;
 
         Gizmos.color = gizmosColor;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireCube(CalculateHitboxPosition(), hitboxDimension);
     }
 #endif
 }
