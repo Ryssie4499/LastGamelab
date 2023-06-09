@@ -1445,7 +1445,8 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 64
-  range: 5
+  hitboxPosition: {x: 0, y: 2, z: 2.5}
+  hitboxDimension: {x: 3, y: 4, z: 3}
   showGizmos: 1
   gizmosColor: {r: 0, g: 0.6277771, b: 1, a: 1}
 --- !u!114 &1846899423
@@ -1463,7 +1464,8 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 128
-  range: 5
+  hitboxPosition: {x: 0, y: 2, z: 2.5}
+  hitboxDimension: {x: 3, y: 4, z: 3}
   showGizmos: 1
   gizmosColor: {r: 1, g: 0.43137255, b: 0, a: 1}
 --- !u!4 &2066617217 stripped
