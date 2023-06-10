@@ -76,7 +76,7 @@ Transform:
   - {fileID: 1479824351804872803}
   - {fileID: 7512754660567940333}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5378195035777057801
 PrefabInstance:
@@ -145,6 +145,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Select.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Select.m_SingletonActionBindings.Array.data[1].m_Id
+      value: c5c4639f-5690-44f2-8e33-b6fc0d1bd28f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Select.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Select.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
