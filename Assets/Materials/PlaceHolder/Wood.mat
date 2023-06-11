@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-663580978452125455
+--- !u!114 &-4287876212614523688
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Wood
   m_Shader: {fileID: -6465566751694194690, guid: ca000dea3a0866443bd7886394dc826c,
     type: 3}
   m_Parent: {fileID: 0}
@@ -113,8 +113,8 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _First_band_brightness: 0.77
-    - _First_band_size: 0.643
+    - _First_band_brightness: 1
+    - _First_band_size: 0.67
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -136,9 +136,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.4669811, g: 0.89996934, b: 1, a: 1}
-    - _Base_color: {r: 0, g: 0.8901961, b: 1, a: 1}
-    - _Color: {r: 0.46698105, g: 0.89996934, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_color: {r: 1, g: 0.7154708, b: 0.4669811, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

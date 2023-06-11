@@ -11,7 +11,7 @@ public class RockInteraction : Interaction
 
     private void Rock()
     {
-        if (inputManager.Rock.ReadValue<float>() < 1f) return;
+        if (inputManager.Rock.triggered) return;
 
         Collider collider = GetClosestInteractable();
 
