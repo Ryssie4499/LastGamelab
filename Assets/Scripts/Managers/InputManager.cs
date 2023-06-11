@@ -21,7 +21,34 @@ public class InputManager : MonoBehaviour
     public InputAction Back;
 
 
+    [Header("Any controll")]
 
+    public InputAction AnyKeybord;
+    public InputAction AnyPad;
+
+
+    //Button Bools
+
+    public bool anyKeybord;
+    public bool anyPad;
+    public bool usingKeybord;
+
+
+
+
+
+    private void Awake()
+    {
+
+        // controls Detection
+        AnyKeybord.started += context => anyKeybord = true;
+        AnyKeybord.performed += context => anyKeybord = true;
+        AnyKeybord.canceled += context => anyKeybord = false;
+
+        AnyPad.started += context => anyPad = true;
+        AnyPad.performed += context => anyPad = true;
+        AnyPad.canceled += context => anyPad = false;
+    }
 
     private void OnEnable()
     {
@@ -33,7 +60,9 @@ public class InputManager : MonoBehaviour
         Select.Enable();
         Back.Enable();
         Pause.Enable();
-    }
+        AnyKeybord.Enable();
+        AnyPad.Enable();
+}
 
 
     private void OnDisable()
@@ -46,6 +75,28 @@ public class InputManager : MonoBehaviour
         Select.Disable();
         Back.Disable();
         Pause.Disable();
+        AnyKeybord.Disable();
+        AnyPad.Disable();
+    }
+
+
+
+
+    private void Update()
+    {
+        ControllerDetection();
+    }
+
+    void ControllerDetection()
+    {
+        if(anyKeybord)
+        {
+            usingKeybord = true;
+        }
+        else if(anyPad)
+        {
+            usingKeybord = false;
+        }
     }
 
 }
