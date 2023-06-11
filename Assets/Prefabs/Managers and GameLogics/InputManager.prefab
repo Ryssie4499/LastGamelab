@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6770502706139305632
 MonoBehaviour:
@@ -322,6 +322,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Select
       m_Flags: 0
+    - m_Name: 
+      m_Id: c5c4639f-5690-44f2-8e33-b6fc0d1bd28f
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select
+      m_Flags: 0
     m_Flags: 0
   Back:
     m_Name: Back
@@ -359,6 +367,46 @@ MonoBehaviour:
     - m_Name: 
       m_Id: bfcccf1e-3470-4de7-9bb6-8c74fe723846
       m_Path: <Keyboard>/anyKey
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Any Keybord
+      m_Flags: 0
+    - m_Name: 
+      m_Id: ee369472-827c-4d7e-b6e2-a899e8cfbade
+      m_Path: <Mouse>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Any Keybord
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 970606bd-bba6-4068-90ee-227d6544c868
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Any Keybord
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 1d4c19a2-8a6a-4c79-a946-2594348e2b84
+      m_Path: <Mouse>/middleButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Any Keybord
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 49b5b29c-6767-4d9d-bf5f-e7854b7ef0c3
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Any Keybord
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 4e98b67a-d12c-46ac-a32b-9eb75e16f58b
+      m_Path: <Mouse>/scroll
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -494,12 +542,6 @@ MonoBehaviour:
       m_Action: Any Pad
       m_Flags: 0
     m_Flags: 0
-  fire: 0
-  ice: 0
-  rock: 0
-  paused: 0
-  select: 0
-  back: 0
   anyKeybord: 0
   anyPad: 0
   usingKeybord: 0
