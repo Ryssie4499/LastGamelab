@@ -155,7 +155,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ee0a8229f8e6a1a4c984ec90d5cd2670,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6379645
+      value: 0.7587938
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee0a8229f8e6a1a4c984ec90d5cd2670,
         type: 3}
@@ -165,7 +165,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ee0a8229f8e6a1a4c984ec90d5cd2670,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7700657
+      value: -0.651331
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee0a8229f8e6a1a4c984ec90d5cd2670,
         type: 3}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ee0a8229f8e6a1a4c984ec90d5cd2670,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -100.72
+      value: -81.284
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee0a8229f8e6a1a4c984ec90d5cd2670,
         type: 3}
@@ -243,7 +243,7 @@ PrefabInstance:
     - target: {fileID: 7740188624656370778, guid: a827528cc11f0844a89fc58c3a3c2038,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7740188624656370778, guid: a827528cc11f0844a89fc58c3a3c2038,
         type: 3}
@@ -6476,6 +6476,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 18996c5429b329f4e9c9c2ecc443d8fa, type: 2}
+    - target: {fileID: 1357992860921466567, guid: d9362126fd9f84f41bd93ea7035ae878,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fffe1b3ad5a864e418ed9b10285e7d33, type: 2}
     - target: {fileID: 1621358390196301590, guid: d9362126fd9f84f41bd93ea7035ae878,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6555,6 +6560,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002312492226457699, guid: d9362126fd9f84f41bd93ea7035ae878,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.16914482
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002312492226457699, guid: d9362126fd9f84f41bd93ea7035ae878,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6482251
       objectReference: {fileID: 0}
     - target: {fileID: 8364896433291909344, guid: d9362126fd9f84f41bd93ea7035ae878,
         type: 3}
