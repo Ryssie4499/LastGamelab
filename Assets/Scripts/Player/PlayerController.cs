@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     InputManager iM;
     Rigidbody rb;
 
-    [SerializeField] Transform cam;
 
 
     Vector3 movement;

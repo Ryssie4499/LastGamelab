@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class CamClamp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform minCorner;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] Transform maxCorner;
+
+    [SerializeField] Transform player;
+
+    private void Start()
     {
-        
+        transform.position = player.position;
+    }
+    private void Update()
+    {
+        if (player.position.x < maxCorner.position.x && player.position.x > minCorner.position.x)
+        {
+            transform.position = new Vector3(player.position.x, transform.position.y,transform.position.z);
+        }
+
+        if (player.position.z < maxCorner.position.z && player.position.z > minCorner.position.z)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, player.position.z);
+        }
     }
 }

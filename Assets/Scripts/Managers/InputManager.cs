@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
     [Header("Menu Controls")]
 
     public InputAction Select;
+    public InputAction SelectWithController;
     public InputAction Back;
     public InputAction downMenu;
     public InputAction UpMenu;
@@ -51,6 +52,8 @@ public class InputManager : MonoBehaviour
         AnyPad.started += context => anyPad = true;
         AnyPad.performed += context => anyPad = true;
         AnyPad.canceled += context => anyPad = false;
+
+
     }
 
     private void OnEnable()
@@ -68,6 +71,7 @@ public class InputManager : MonoBehaviour
         Interact.Enable();
         UpMenu.Enable();
         downMenu.Enable();
+        SelectWithController.Enable();
 }
 
 
@@ -86,6 +90,7 @@ public class InputManager : MonoBehaviour
         Interact.Disable();
         UpMenu.Disable();
         downMenu.Disable();
+        SelectWithController.Disable();
     }
 
 
@@ -94,6 +99,11 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         ControllerDetection();
+
+        if(anyPad)
+        {
+            Debug.Log("performed");
+        }
     }
 
     void ControllerDetection()

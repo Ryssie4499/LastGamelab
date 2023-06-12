@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6770502706139305632
 MonoBehaviour:
@@ -306,6 +306,15 @@ MonoBehaviour:
       m_Action: Pause
       m_Flags: 0
     m_Flags: 0
+  Interaction:
+    m_Name: Interaction
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2d824c35-1f2f-44dd-852c-7eff0d57ea16
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   Select:
     m_Name: Select
     m_Type: 0
@@ -355,6 +364,24 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Back
       m_Flags: 0
+    m_Flags: 0
+  downMenu:
+    m_Name: Down Menu
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 19ad2ff2-b815-44cc-b1c6-cf384751dc61
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  UpMenu:
+    m_Name: Up Menu
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: eea56dee-1bc5-42c2-89b3-d43dd1587881
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
     m_Flags: 0
   AnyKeybord:
     m_Name: Any Keybord
