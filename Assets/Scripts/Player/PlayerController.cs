@@ -11,11 +11,14 @@ public class PlayerController : MonoBehaviour
 
 
     Vector3 movement;
+    Vector3 offset;
     [SerializeField]float speed;
+    bool isMoving;
     void Start()
     {
         iM = GameManager.Instance.IM;
         rb = GetComponent<Rigidbody>();
+        offset = new Vector3(1, 0, 1);
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
     void MoveInputs()
     {
         movement = new Vector3(iM.MoveHor.ReadValue<float>(), 0, iM.MoveVert.ReadValue<float>()).normalized;
+        movement = rb.rotation * movement;
     }
 
     void MovePlayer(Vector3 dir)
