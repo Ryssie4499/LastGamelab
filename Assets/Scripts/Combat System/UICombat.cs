@@ -62,13 +62,12 @@ public class UICombat : MonoBehaviour
     }
     private void Update()
     {
-        //FireChoice();
-        //IceChoice();
-        //RockChoice();
+        FireChoice();
+        IceChoice();
+        RockChoice();
         SameAnswerCheck();
         HealthSystem();
-        //if (inputManager.Select.ReadValue<float>() < 1f) return;
-        if (inputManager.Select.ReadValue<float>() == 1f)
+        if (inputManager.Interact.triggered)
         {
             CombatCanvas.SetActive(true);
             GameManager.Instance.gameState = GameManager.GameState.inMenu;
@@ -175,7 +174,7 @@ public class UICombat : MonoBehaviour
             CheckRightAnswer();
             mistakesCounter = 0;
         }
-        //selected = false;
+        selected = false;
     }
     public void Answer2()
     {
@@ -210,7 +209,7 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.red;
             button2.GetComponent<Button>().colors = colors;
         }
-        //selected = false;
+        selected = false;
     }
     public void Answer3()
     {
@@ -245,7 +244,7 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.red;
             button3.GetComponent<Button>().colors = colors;
         }
-        //selected = false;
+        selected = false;
     }
     void CheckRightAnswer()
     {
@@ -256,39 +255,36 @@ public class UICombat : MonoBehaviour
         else
             risposta3Txt.text = ris[UnityEngine.Random.Range(0, ris.Count())];
     }
-    //void FireChoice()
-    //{
-    //    //if (inputManager.Fire.ReadValue<float>() < 1f) return;
-    //    if (inputManager.Fire.ReadValue<float>() == 1f)
-    //    {
-    //        Debug.Log("Fuoco");
-    //        selected = true;
-    //        if (selected)
-    //            Answer1();
-    //    }
-    //}
-    //void IceChoice()
-    //{
-    //    //if (inputManager.Ice.ReadValue<float>() < 1f) return;
-    //    if (inputManager.Fire.ReadValue<float>() == 1f)
-    //    {
-    //        Debug.Log("Ghiaccio");
-    //        selected = true;
-    //        if (selected)
-    //            Answer2();
-    //    }
-    //}
-    //void RockChoice()
-    //{
-    //    //if (inputManager.Rock.ReadValue<float>() < 1f) return;
-    //    if (inputManager.Fire.ReadValue<float>() == 1f)
-    //    {
-    //        Debug.Log("Roccia");
-    //        selected = true;
-    //        if (selected)
-    //            Answer3();
-    //    }
-    //}
+    void FireChoice()
+    {
+        if (inputManager.Fire.triggered)
+        {
+            selected = true;
+            Debug.Log("Fuoco");
+            if(selected)
+                Answer1();
+        }
+    }
+    void IceChoice()
+    {
+        if (inputManager.Fire.triggered)
+        {
+            selected = true;
+            Debug.Log("Ghiaccio");
+            if (selected)
+                Answer2();
+        }
+    }
+    void RockChoice()
+    {
+        if (inputManager.Fire.triggered)
+        {
+            selected = true;
+            Debug.Log("Roccia");
+            if (selected)
+                Answer3();
+        }
+    }
     IEnumerator timeColorChange()
     {
         yield return new WaitForSeconds(0.2f);

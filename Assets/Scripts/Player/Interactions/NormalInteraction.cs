@@ -11,7 +11,7 @@ public class NormalInteraction : Interaction
 
     private void Normal()
     {
-         if (Input.GetKeyDown(KeyCode.E)) return;
+         if (!inputManager.Interact.triggered) return;
 
         Collider collider = GetClosestInteractable();
 
