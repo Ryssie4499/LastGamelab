@@ -77,7 +77,7 @@ Transform:
   - {fileID: 7512754660567940333}
   - {fileID: 7001140729434272734}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4884304474140560186
 PrefabInstance:
@@ -146,6 +146,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_Id
+      value: 68ac7809-01b6-42ae-a773-49b4c20560fe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_Name
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 6fdde276-9d2d-4305-9ece-8b6210c5213e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Interact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -228,8 +258,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: Interact.m_Id
+      value: 127e435c-67ed-47c4-b8c9-5762ef8c7842
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_Name
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Select.m_SingletonActionBindings.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
@@ -238,13 +283,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 34879569-0050-4808-b12e-ac6901abe62f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Select.m_SingletonActionBindings.Array.data[1].m_Path
       value: <Keyboard>/space
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Select.m_SingletonActionBindings.Array.data[1].m_Action
       value: Select
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Interact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
