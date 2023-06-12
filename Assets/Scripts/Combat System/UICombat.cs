@@ -20,6 +20,7 @@ public class UICombat : MonoBehaviour
     private string rispostaGiusta;
     private string rispostaAttuale;
     private int mistakesCounter;
+    Color startColor;
     #endregion
     #region Questions
     private string[] dom = new string[]
@@ -39,7 +40,6 @@ public class UICombat : MonoBehaviour
     #endregion
     int randomIndex;
     InputManager inputManager;
-    bool selected;
     private void Awake()
     {
         risposte = new Dictionary<string, string>
@@ -58,15 +58,19 @@ public class UICombat : MonoBehaviour
         domandaTxt.text = dom[randomIndex];
         rispostaGiusta = ris[randomIndex];
         CheckRightAnswer();
-
+        var color = button1.GetComponent<Button>().colors;
+        startColor = color.normalColor;
     }
     private void Update()
     {
-        FireChoice();
-        IceChoice();
-        RockChoice();
-        SameAnswerCheck();
-        HealthSystem();
+        if (CombatCanvas.activeSelf)
+        {
+            FireChoice();
+            IceChoice();
+            RockChoice();
+            SameAnswerCheck();
+            HealthSystem();
+        }
         if (inputManager.Interact.triggered)
         {
             CombatCanvas.SetActive(true);
@@ -89,7 +93,7 @@ public class UICombat : MonoBehaviour
     }
     void HealthSystem()
     {
-        if (StatsManager.Instance.PlayerHealth <= 0 || StatsManager.Instance.EnemyHealth <= 0)
+        if (StatsManager.Instance.PlayerHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -123,6 +127,10 @@ public class UICombat : MonoBehaviour
                 shadow_hearts[i].enabled = false;
             }
         }
+        if(StatsManager.Instance.EnemyHealth<=0)
+        {
+            CombatCanvas.SetActive(false);
+        }
     }
     #endregion
     void SameAnswerCheck()
@@ -153,6 +161,7 @@ public class UICombat : MonoBehaviour
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
             colors.selectedColor = Color.green;
+            colors.normalColor = Color.green;
             button1.GetComponent<Button>().colors = colors;
             MakeDamage(1);
         }
@@ -161,11 +170,13 @@ public class UICombat : MonoBehaviour
         {
             mistakesCounter++;
             colors.selectedColor = Color.red;
+            colors.normalColor = Color.red; 
             button1.GetComponent<Button>().colors = colors;
         }
         if (mistakesCounter == 2)
         {
             colors.selectedColor = Color.red;
+            colors.normalColor = Color.red;
             button1.GetComponent<Button>().colors = colors;
             TakeDamage(1);
             randomIndex = UnityEngine.Random.Range(0, dom.Count());
@@ -174,7 +185,6 @@ public class UICombat : MonoBehaviour
             CheckRightAnswer();
             mistakesCounter = 0;
         }
-        selected = false;
     }
     public void Answer2()
     {
@@ -188,6 +198,7 @@ public class UICombat : MonoBehaviour
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
             colors.selectedColor = Color.green;
+            colors.normalColor = Color.green;
             button2.GetComponent<Button>().colors = colors;
             MakeDamage(1);
         }
@@ -196,6 +207,7 @@ public class UICombat : MonoBehaviour
         {
             mistakesCounter++;
             colors.selectedColor = Color.red;
+            colors.normalColor = Color.red;
             button2.GetComponent<Button>().colors = colors;
         }
         if (mistakesCounter == 2)
@@ -207,9 +219,9 @@ public class UICombat : MonoBehaviour
             CheckRightAnswer();
             mistakesCounter = 0;
             colors.selectedColor = Color.red;
+            colors.normalColor = Color.red;
             button2.GetComponent<Button>().colors = colors;
         }
-        selected = false;
     }
     public void Answer3()
     {
@@ -223,6 +235,7 @@ public class UICombat : MonoBehaviour
             rispostaGiusta = ris[randomIndex];
             CheckRightAnswer();
             colors.selectedColor = Color.green;
+            colors.normalColor = Color.green;
             button3.GetComponent<Button>().colors = colors;
             MakeDamage(1);
         }
@@ -231,6 +244,7 @@ public class UICombat : MonoBehaviour
         {
             mistakesCounter++;
             colors.selectedColor = Color.red;
+            colors.normalColor = Color.red;
             button3.GetComponent<Button>().colors = colors;
         }
         if (mistakesCounter == 2)
@@ -242,9 +256,9 @@ public class UICombat : MonoBehaviour
             CheckRightAnswer();
             mistakesCounter = 0;
             colors.selectedColor = Color.red;
+            colors.normalColor = Color.red;
             button3.GetComponent<Button>().colors = colors;
         }
-        selected = false;
     }
     void CheckRightAnswer()
     {
@@ -259,30 +273,24 @@ public class UICombat : MonoBehaviour
     {
         if (inputManager.Fire.triggered)
         {
-            selected = true;
             Debug.Log("Fuoco");
-            if(selected)
-                Answer1();
+            Answer1();
         }
     }
     void IceChoice()
     {
-        if (inputManager.Fire.triggered)
+        if (inputManager.Ice.triggered)
         {
-            selected = true;
             Debug.Log("Ghiaccio");
-            if (selected)
-                Answer2();
+            Answer2();
         }
     }
     void RockChoice()
     {
-        if (inputManager.Fire.triggered)
+        if (inputManager.Rock.triggered)
         {
-            selected = true;
             Debug.Log("Roccia");
-            if (selected)
-                Answer3();
+            Answer3();
         }
     }
     IEnumerator timeColorChange()
@@ -292,8 +300,11 @@ public class UICombat : MonoBehaviour
         var color2 = button2.GetComponent<Button>().colors;
         var color3 = button3.GetComponent<Button>().colors;
         color1.selectedColor = color1.normalColor;
+        color1.normalColor = startColor;
         color2.selectedColor = color2.normalColor;
+        color2.normalColor = startColor;
         color3.selectedColor = color3.normalColor;
+        color3.normalColor = startColor;
         button1.GetComponent<Button>().colors = color1;
         button2.GetComponent<Button>().colors = color2;
         button3.GetComponent<Button>().colors = color3;

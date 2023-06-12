@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
     public InputAction Ice;
     public InputAction Rock;
     public InputAction Pause;
-    public InputAction Interaction;
+    public InputAction Interact;
 
 
     [Header("Menu Controls")]
@@ -65,7 +65,7 @@ public class InputManager : MonoBehaviour
         Pause.Enable();
         AnyKeybord.Enable();
         AnyPad.Enable();
-        Interaction.Enable();
+        Interact.Enable();
         UpMenu.Enable();
         downMenu.Enable();
 }
@@ -83,7 +83,7 @@ public class InputManager : MonoBehaviour
         Pause.Disable();
         AnyKeybord.Disable();
         AnyPad.Disable();
-        Interaction.Disable();
+        Interact.Disable();
         UpMenu.Disable();
         downMenu.Disable();
     }

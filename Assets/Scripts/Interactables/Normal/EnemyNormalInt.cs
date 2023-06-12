@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyNormalInt : MonoBehaviour, INormalable
 {
-    public bool selected;
+    public bool inRange;
     public void NormalInteraction()
     {
-        selected = true;
+        inRange = true;
     }
 
     
