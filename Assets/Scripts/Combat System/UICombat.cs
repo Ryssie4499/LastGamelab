@@ -129,6 +129,7 @@ public class UICombat : MonoBehaviour
         }
         if(StatsManager.Instance.EnemyHealth<=0)
         {
+            GameManager.Instance.gameState = GameManager.GameState.inGame;
             CombatCanvas.SetActive(false);
         }
     }

@@ -43,7 +43,13 @@ public class StatsManager : MonoBehaviour
 
         if (EnemyHealth <= 0)
         {
+            StartCoroutine(Enemy());
             Debug.Log("Win");
         }
+    }
+    IEnumerator Enemy()
+    {
+        yield return new WaitForSeconds(0.5f);
+        EnemyHealth = 2;
     }
 }

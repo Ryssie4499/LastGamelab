@@ -6,22 +6,22 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health;
-    public float maxHealth;
+    EnemyNormalInt enemy;
     private void Start()
     {
-        health = maxHealth;
-    }
-    public void TakeDamage(int damageAmount)
-    {
-        health -= damageAmount;
-        if (health <= 0 && gameObject != null)
-        {
-            Debug.Log("Morto");
-            Destroy(gameObject);
-        }
+        enemy = GetComponent<EnemyNormalInt>();
     }
     private void Update()
     {
-        
+        health = StatsManager.Instance.EnemyHealth;
+        if (enemy.selected == true)
+        {
+            if (health <= 0 && gameObject != null)
+            {
+                Debug.Log("Morto");
+                Destroy(gameObject);
+            }
+        }
     }
+    
 }
