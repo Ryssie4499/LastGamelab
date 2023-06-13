@@ -300,12 +300,12 @@ public class UICombat : MonoBehaviour
         var color1 = button1.GetComponent<Button>().colors;
         var color2 = button2.GetComponent<Button>().colors;
         var color3 = button3.GetComponent<Button>().colors;
-        color1.selectedColor = color1.normalColor;
         color1.normalColor = startColor;
-        color2.selectedColor = color2.normalColor;
+        color1.selectedColor = color1.normalColor;
         color2.normalColor = startColor;
-        color3.selectedColor = color3.normalColor;
+        color2.selectedColor = color2.normalColor;
         color3.normalColor = startColor;
+        color3.selectedColor = color3.normalColor;
         button1.GetComponent<Button>().colors = color1;
         button2.GetComponent<Button>().colors = color2;
         button3.GetComponent<Button>().colors = color3;
