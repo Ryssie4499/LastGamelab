@@ -104,9 +104,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Second_band_smoothness: 0.9
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Ambient_Occlusion_strength: 0.24
+    - _Ambient_occlusion_treshold: 0.24
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -136,8 +138,11 @@ Material:
     - _ReceiveShadows: 1
     - _SHADOWS_SOFT: 1
     - _Second_band_brightness: 0.5
+    - _Second_band_darkness: 0.3
     - _Second_band_size: 0.33
     - _Shadow_brightness: 0.1
+    - _Shadow_darkness: 0.1
+    - _Shadow_smoothness: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

@@ -105,6 +105,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Second_band_smoothness: 0.3
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Ambient_Occlusion_strength: 0.83
@@ -138,6 +139,7 @@ Material:
     - _ReceiveShadows: 1
     - _SHADOWS_SOFT: 1
     - _Second_band_brightness: 0.5
+    - _Second_band_darkness: 0.3
     - _Second_band_size: 0.33
     - _Shadow_brightness: 0.7
     - _Shadow_darkness: 0.75
