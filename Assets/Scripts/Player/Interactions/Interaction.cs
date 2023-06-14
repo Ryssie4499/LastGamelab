@@ -37,6 +37,11 @@ public abstract class Interaction : MonoBehaviour
         return closest;
     }
 
+    protected void Totem(Totem totem, Wisp wisp)
+    {
+        wisp.GoToTotem(totem);
+    }
+
     private Vector3 CalculateHitboxPosition()
     {
         return transform.position + transform.right * hitboxPosition.x + transform.up * hitboxPosition.y + transform.forward * hitboxPosition.z;

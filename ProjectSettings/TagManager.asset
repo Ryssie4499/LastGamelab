@@ -12,14 +12,14 @@ TagManager:
   - 
   - Water
   - UI
-  - Pushable Cube
-  - Fire Destructable
-  - Rock Destructable
+  - Ice Interaction
+  - Fire Interaction
+  - Rock Interaction
   - Interactable
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ice Totem
+  - Fire Totem
+  - Rock totem
   - 
   - 
   - 
