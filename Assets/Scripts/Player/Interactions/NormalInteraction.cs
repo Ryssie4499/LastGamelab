@@ -11,10 +11,8 @@ public class NormalInteraction : Interaction
 
     private void Normal()
     {
-         if (!inputManager.Interact.triggered) return;
-
+        if (!inputManager.Interact.triggered) return;
         Collider collider = GetClosestInteractable();
-
         if (collider == null)
         {
             return;

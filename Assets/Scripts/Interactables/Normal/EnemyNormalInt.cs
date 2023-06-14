@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class EnemyNormalInt : MonoBehaviour, INormalable
 {
-    public bool inRange;
+    public bool selected;
     public void NormalInteraction()
     {
-        inRange = true;
+        selected = true;
     }
-
-    
 }

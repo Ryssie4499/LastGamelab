@@ -1684,13 +1684,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2178934475579121050, guid: 26175e8989c8b4d4cbdc9e71a9271217,
+        type: 3}
+      propertyPath: SelectWithController.m_Id
+      value: fb5a50ed-b435-4a8a-8e0e-101bbffd48ae
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178934475579121050, guid: 26175e8989c8b4d4cbdc9e71a9271217,
+        type: 3}
+      propertyPath: SelectWithController.m_Name
+      value: Select With Controller
+      objectReference: {fileID: 0}
     - target: {fileID: 7651450981289532309, guid: 26175e8989c8b4d4cbdc9e71a9271217,
         type: 3}
       propertyPath: m_Name
       value: _Managers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5273597354597381516, guid: 26175e8989c8b4d4cbdc9e71a9271217, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26175e8989c8b4d4cbdc9e71a9271217, type: 3}

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     Vector3 movement;
     Vector3 offset;
-    [SerializeField]float speed;
+    [SerializeField] float speed;
     bool isMoving;
     void Start()
     {
@@ -23,12 +23,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveInputs();
+        if (GameManager.Instance.gameState == GameManager.GameState.inGame)
+            MoveInputs();
     }
 
     private void FixedUpdate()
     {
-        MovePlayer(movement);
+        if (GameManager.Instance.gameState == GameManager.GameState.inGame)
+            MovePlayer(movement);
     }
 
 

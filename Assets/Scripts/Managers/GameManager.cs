@@ -29,8 +29,11 @@ public class GameManager : MonoBehaviour
 
     public enum GameState 
     { 
+        inPlayer,
         inMenu,
         inGame,
+        inCombat,
+
     }
 
     public GameState gameState = GameState.inMenu;
@@ -48,13 +51,39 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
 
 
+    private void Update()
+    {
+        controlMouse();
+    }
 
 
 
     public InputManager IM { get { return _iM; } set { _iM = value; } }
+
+
+    void controlMouse()
+    {
+        if(gameState == GameState.inPlayer)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            if(IM.usingKeybord)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
+    }
 
 }
 
