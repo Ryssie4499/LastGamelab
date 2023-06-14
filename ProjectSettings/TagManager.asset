@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PressurePlate
   layers:
   - Default
   - TransparentFX
@@ -11,14 +12,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ice Interaction
+  - Fire Interaction
+  - Rock Interaction
+  - Interactable
+  - Player
+  - Ice Totem
+  - Fire Totem
+  - Rock totem
   - 
   - 
   - 
