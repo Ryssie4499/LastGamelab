@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class UIButtons : MonoBehaviour
@@ -19,13 +20,14 @@ public class UIButtons : MonoBehaviour
         }
     }
 
-    public GameObject StartMenu, PauseMenu, EndMenu, EasterEggMenu, KeymapMenu, USureMenu;
+    public GameObject StartMenu, PauseMenu, EndMenu, EasterEggMenu, KeymapMenu, USureMenu, VolumeMenu;
     public void EXIT()
     {
         Application.Quit();
     }
     public void PLAY()
     {
+        StartMenu.SetActive(false);
         GameManager.Instance.gameState = GameManager.GameState.inGame;
     }
     public void KEYMAP()
@@ -46,14 +48,16 @@ public class UIButtons : MonoBehaviour
     }
     public void MAINMENU()
     {
-
+        SceneManager.LoadScene(0);
     }
     public void VOLUME()
     {
-
+        VolumeMenu.SetActive(true);
     }
     public void CLOSE()
     {
-
+        VolumeMenu.SetActive(false);
+        USureMenu.SetActive(false);
+        KeymapMenu.SetActive(false);
     }
 }
