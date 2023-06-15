@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class UIButtons : MonoBehaviour
 {
+    InputManager iM;
     private static UIButtons _instance;
 
+    public GameObject StartMenu, PauseMenu, EndMenu, EasterEggMenu, KeymapMenu, USureMenu, VolumeMenu;
     public static UIButtons Instance
     {
         get
@@ -19,8 +21,22 @@ public class UIButtons : MonoBehaviour
             return _instance;
         }
     }
-
-    public GameObject StartMenu, PauseMenu, EndMenu, EasterEggMenu, KeymapMenu, USureMenu, VolumeMenu;
+    void Start()
+    {
+        iM = GameManager.Instance.IM;
+    }
+    private void Update()
+    {
+        if (iM.Pause.triggered && GameManager.Instance.gameState == GameManager.GameState.inGame)
+        {
+            GameManager.Instance.gameState = GameManager.GameState.inMenu;
+            PauseMenu.SetActive(true);
+        }
+        else if (GameManager.Instance.gameState == GameManager.GameState.inMenu && iM.Pause.triggered)
+        {
+            PLAY();
+        }
+    }
     public void EXIT()
     {
         Application.Quit();
@@ -28,6 +44,7 @@ public class UIButtons : MonoBehaviour
     public void PLAY()
     {
         StartMenu.SetActive(false);
+        PauseMenu.SetActive(false);
         GameManager.Instance.gameState = GameManager.GameState.inGame;
     }
     public void KEYMAP()
@@ -38,17 +55,21 @@ public class UIButtons : MonoBehaviour
     {
         EasterEggMenu.SetActive(true);
     }
-    public void USURE()
-    {
-        USureMenu.SetActive(true);
-    }
+    //public void USURE()
+    //{
+    //    USureMenu.SetActive(true);
+    //}
     public void RESETLEVEL()
     {
 
     }
     public void MAINMENU()
     {
-        SceneManager.LoadScene(0);
+        USureMenu.SetActive(true);
+    }
+    public void IMSURE()
+    {
+        
     }
     public void VOLUME()
     {
