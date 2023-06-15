@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum TypeOfWisp
+{
+    Fire,
+    Ice,
+    Rock
+}
 public class Wisp : MonoBehaviour
 {
+    public TypeOfWisp typeOfWisp;
     [SerializeField] Transform followPoint;
     [SerializeField] float floatingFrequency = 1f;
     [SerializeField] float floatingAmount = 1f;
@@ -13,6 +20,7 @@ public class Wisp : MonoBehaviour
 
     [SerializeField] Transform mesh;
     public bool isInTotem;
+    public Transform TotemSphere;
 
     public GameObject Player;
     public bool hasStopped;
@@ -54,36 +62,44 @@ public class Wisp : MonoBehaviour
 
     private void Update()
     {
-        floatingOffset += Time.deltaTime;
-
-
-        Vector3 position = mesh.position;
-        position.y = height + Mathf.Sin((seed + floatingOffset) * floatingFrequency) * floatingAmount;
-        mesh.position = position;
-
-        #region orbitate
-        //se il player non si muove (non prendeva 0 perchè si muoveva sempre di un millimetro senza che toccassi niente) fa partire il timer di 5 secondi
-        if (playerRB.velocity.magnitude >= 0 && playerRB.velocity.magnitude <= 0.1f && coOrbitate == null)
+        if (isInTotem)
         {
-            coOrbitate = StartCoroutine(TimeToOrbitate());
+            agent.SetDestination(TotemSphere.position);
         }
-        else if (playerRB.velocity.magnitude > 0.1f && coOrbitate != null)
-        {
-            StopCoroutine(coOrbitate /*TimeToOrbitate()*/);
-            coOrbitate = null;
-            hasStopped = false;
-        }
-
-        //se si muove prende la tua destinazione
-        if (!hasStopped)
-        {
-            agent.SetDestination(followPoint.position);
-
-        }
-        //se non si muove orbita
         else
-            Orbitate();
-        #endregion
+        {
+            floatingOffset += Time.deltaTime;
+
+
+            Vector3 position = mesh.position;
+            position.y = height + Mathf.Sin((seed + floatingOffset) * floatingFrequency) * floatingAmount;
+            mesh.position = position;
+
+            #region orbitate
+            //se il player non si muove (non prendeva 0 perchè si muoveva sempre di un millimetro senza che toccassi niente) fa partire il timer di 5 secondi
+            if (playerRB.velocity.magnitude >= 0 && playerRB.velocity.magnitude <= 0.1f && coOrbitate == null)
+            {
+                coOrbitate = StartCoroutine(TimeToOrbitate());
+            }
+            else if (playerRB.velocity.magnitude > 0.1f && coOrbitate != null)
+            {
+                StopCoroutine(coOrbitate /*TimeToOrbitate()*/);
+                coOrbitate = null;
+                hasStopped = false;
+            }
+
+            //se si muove prende la tua destinazione
+            if (!hasStopped)
+            {
+                agent.SetDestination(followPoint.position);
+
+            }
+            //se non si muove orbita
+            else
+                Orbitate();
+            #endregion
+
+        }
     }
 
     public void GoToTotem(Totem totem)
@@ -95,7 +111,7 @@ public class Wisp : MonoBehaviour
     public void Orbitate()
     {
         agent.ResetPath();
-        agent.gameObject.transform.RotateAround(Player.transform.position, Vector3.up, degreesPerSecond * Time.deltaTime);
+        transform.RotateAround(Player.transform.position, Vector3.up, degreesPerSecond * Time.deltaTime);
     }
 
     //timer di cinque secondi, dopo quel lasso di tempo, si rende conto di essere fermo da troppo
