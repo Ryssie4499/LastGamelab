@@ -32,24 +32,6 @@ public class Wisp : MonoBehaviour
     private float floatingOffset;
     public Coroutine coOrbitate;
 
-    //private void Awake()
-    //{
-    //    agentTransform = agent.transform;
-    //    agentTransform.parent = transform.parent;
-    //    Vector3 position = agentTransform.position;
-    //    //position.y = 0;
-    //    agentTransform.position = position;
-    //    agent.FollowPoint = followPoint;
-    //    height = transform.position.y;
-
-    //    seed = Random.Range(0, Mathf.PI * 2);
-    //}
-
-    //private void Update()
-    //{
-    //    
-
-    //}
     private NavMeshAgent agent;
     Rigidbody playerRB;
 
@@ -102,10 +84,17 @@ public class Wisp : MonoBehaviour
         }
     }
 
-    public void GoToTotem(Totem totem)
+    public void GoToTotem(Transform totemPoint)
     {
-
+        TotemSphere = totemPoint;
+        isInTotem = true;
     }
+
+    public void ReturnToPlayer()
+    {
+        isInTotem = false;
+    }
+
     #region orbitate
     //gli resetto la destinazione e lo faccio ruotare attorno al player sull'asse y di 45° al secondo
     public void Orbitate()

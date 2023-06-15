@@ -29,6 +29,8 @@ public class PushableCube : MonoBehaviour, IIceable
         ignoreInput = true;
 
         animator.SetTrigger("Ice");
+
+        Debug.Log("icee");
     }
 
     public void UnIce()
@@ -38,7 +40,7 @@ public class PushableCube : MonoBehaviour, IIceable
         body.mass = 100000f;
         //body.velocity = Vector3.zero;
         animator.SetTrigger("UnIce");
-
+        //Debug.Log("unicee");
     }
 
     public void AnimationIce()
@@ -50,6 +52,7 @@ public class PushableCube : MonoBehaviour, IIceable
 
     public void AnimationUnIce()
     {
+        //Debug.Log("done");
         isIced = false;
         ignoreInput = false;
     }

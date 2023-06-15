@@ -10,7 +10,7 @@ public abstract class Interaction : MonoBehaviour
 
     protected InputManager inputManager;
 
-    private void Start()
+    protected void Start()
     {
         inputManager = GameManager.Instance.IM;
     }
@@ -35,11 +35,6 @@ public abstract class Interaction : MonoBehaviour
         }
 
         return closest;
-    }
-
-    protected void Totem(Totem totem, Wisp wisp)
-    {
-        wisp.GoToTotem(totem);
     }
 
     private Vector3 CalculateHitboxPosition()

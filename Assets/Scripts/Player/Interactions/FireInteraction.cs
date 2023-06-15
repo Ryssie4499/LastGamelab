@@ -1,25 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class FireInteraction : Interaction
+public class FireInteraction : WispInteraction
 {
-    void Update()
+    protected override InputAction GetButton()
     {
-        Fire();
+        return inputManager.Fire;
     }
 
-    private void Fire()
+    protected override void Interact(Collider collider)
     {
-        if (inputManager.Fire.ReadValue<float>() < 1f) return;
-
-        Collider collider = GetClosestInteractable();
-
-        if (collider == null)
-        {
-            return;
-        }
-
         IFireable fireable = collider.GetComponent<IFireable>();
 
         if (fireable != null)

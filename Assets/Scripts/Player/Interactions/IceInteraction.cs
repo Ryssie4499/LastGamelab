@@ -1,25 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class IceInteraction : Interaction
+public class IceInteraction : WispInteraction
 {
-    void Update()
+    protected override InputAction GetButton()
     {
-        Ice();
+        return inputManager.Ice;
     }
 
-    private void Ice()
+    protected override void Interact(Collider collider)
     {
-        if (inputManager.Ice.ReadValue<float>() < 1f) return;
-
-        Collider collider = GetClosestInteractable();
-
-        if (collider == null)
-        {
-            return;
-        }
-
         IIceable iceable = collider.GetComponent<IIceable>();
 
         if (iceable == null)

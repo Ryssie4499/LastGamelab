@@ -1,25 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class RockInteraction : Interaction
+public class RockInteraction : WispInteraction
 {
-    void Update()
+    protected override InputAction GetButton()
     {
-        Rock();
+        return inputManager.Rock;
     }
 
-    private void Rock()
+    protected override void Interact(Collider collider)
     {
-        if (!inputManager.Rock.triggered) return;
-
-        Collider collider = GetClosestInteractable();
-
-        if (collider == null)
-        {
-            return;
-        }
-
         IRockable rockable = collider.GetComponent<IRockable>();
 
         if (rockable != null)
