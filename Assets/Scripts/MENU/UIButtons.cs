@@ -5,6 +5,20 @@ using UnityEngine;
 
 public class UIButtons : MonoBehaviour
 {
+    private static UIButtons _instance;
+
+    public static UIButtons Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.Log(_instance);
+            }
+            return _instance;
+        }
+    }
+
     public GameObject StartMenu, PauseMenu, EndMenu, EasterEggMenu, KeymapMenu, USureMenu;
     public void EXIT()
     {
@@ -27,6 +41,18 @@ public class UIButtons : MonoBehaviour
         USureMenu.SetActive(true);
     }
     public void RESETLEVEL()
+    {
+
+    }
+    public void MAINMENU()
+    {
+
+    }
+    public void VOLUME()
+    {
+
+    }
+    public void CLOSE()
     {
 
     }

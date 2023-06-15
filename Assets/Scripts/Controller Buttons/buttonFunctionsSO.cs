@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ButtonActions", menuName = "scriptableObjects/ButtonActions")]
 public class buttonFunctionsSO : ScriptableObject
 {
-    enum CurrentAcrion
+    enum CurrentAction
     {
         startGame,
         Controls,
@@ -19,51 +19,51 @@ public class buttonFunctionsSO : ScriptableObject
         goBack,
     }
 
-    [SerializeField] CurrentAcrion currentAction;
+    [SerializeField] CurrentAction currentAction;
 
     public void RunButton()
     {
-        if(currentAction == CurrentAcrion.startGame)
+        if(currentAction == CurrentAction.startGame)
         {
             StartGame();
         }
 
-        if (currentAction == CurrentAcrion.Controls)
+        if (currentAction == CurrentAction.Controls)
         {
             Controls();
         }
 
-        if (currentAction == CurrentAcrion.quitGame)
+        if (currentAction == CurrentAction.quitGame)
         {
             QuitGame();
         }
 
-        if (currentAction == CurrentAcrion.resetLevel)
+        if (currentAction == CurrentAction.resetLevel)
         {
             ResetLevel();
         }
 
-        if (currentAction == CurrentAcrion.resume)
+        if (currentAction == CurrentAction.resume)
         {
             Resume();
         }
 
-        if (currentAction == CurrentAcrion.mainMenu)
+        if (currentAction == CurrentAction.mainMenu)
         {
             MainMenu();
         }
 
-        if (currentAction == CurrentAcrion.volumeSlider)
+        if (currentAction == CurrentAction.volumeSlider)
         {
             VolumeSlider();
         }
 
-        if (currentAction == CurrentAcrion.easterEgg)
+        if (currentAction == CurrentAction.easterEgg)
         {
             EasterEgg();
         }
 
-        if (currentAction == CurrentAcrion.goBack)
+        if (currentAction == CurrentAction.goBack)
         {
             GoBack();
         }
@@ -72,46 +72,55 @@ public class buttonFunctionsSO : ScriptableObject
 
     void StartGame()
     {
+        UIButtons.Instance.PLAY();
         Debug.Log("StartGame pressed");
     }
 
     void Controls()
     {
+        UIButtons.Instance.KEYMAP();
         Debug.Log("Controls pressed");
     }
 
     void QuitGame()
     {
+        UIButtons.Instance.EXIT();
         Debug.Log("QuitGame pressed");
     }
 
     void ResetLevel()
     {
+        UIButtons.Instance.RESETLEVEL();
         Debug.Log("Reset Level pressed");
     }
 
     void Resume()
     {
+        UIButtons.Instance.PLAY();
         Debug.Log("Resume pressed");
     }
 
     void MainMenu()
     {
+        UIButtons.Instance.MAINMENU();
         Debug.Log("Main Menu pressed");
     }
 
     void VolumeSlider()
     {
+        UIButtons.Instance.VOLUME();
         Debug.Log("Volume Slider pressed");
     }
 
     void EasterEgg()
     {
+        UIButtons.Instance.EASTEREGG();
         Debug.Log("Easter Egg pressed");
     }
 
     void GoBack()
     {
+        UIButtons.Instance.CLOSE();
         Debug.Log("GoBack pressed");
     }
 
