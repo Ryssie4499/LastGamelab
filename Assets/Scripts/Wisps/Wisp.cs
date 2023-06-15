@@ -22,6 +22,8 @@ public class Wisp : MonoBehaviour
 
     private float seed;
     private float floatingOffset;
+    public Coroutine coOrbitate;
+
     //private void Awake()
     //{
     //    agentTransform = agent.transform;
@@ -42,6 +44,7 @@ public class Wisp : MonoBehaviour
     //}
     private NavMeshAgent agent;
     Rigidbody playerRB;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -58,13 +61,16 @@ public class Wisp : MonoBehaviour
         position.y = height + Mathf.Sin((seed + floatingOffset) * floatingFrequency) * floatingAmount;
         mesh.position = position;
 
+        #region orbitate
         //se il player non si muove (non prendeva 0 perchè si muoveva sempre di un millimetro senza che toccassi niente) fa partire il timer di 5 secondi
-        if (playerRB.velocity.magnitude >= 0 && playerRB.velocity.magnitude <= 0.1f)
+        if (playerRB.velocity.magnitude >= 0 && playerRB.velocity.magnitude <= 0.1f && coOrbitate == null)
         {
-            StartCoroutine(TimeToOrbitate());
+            coOrbitate = StartCoroutine(TimeToOrbitate());
         }
-        else if (playerRB.velocity.magnitude > 0.1f)
+        else if (playerRB.velocity.magnitude > 0.1f && coOrbitate != null)
         {
+            StopCoroutine(coOrbitate /*TimeToOrbitate()*/);
+            coOrbitate = null;
             hasStopped = false;
         }
 
@@ -77,12 +83,14 @@ public class Wisp : MonoBehaviour
         //se non si muove orbita
         else
             Orbitate();
+        #endregion
     }
 
     public void GoToTotem(Totem totem)
     {
 
     }
+    #region orbitate
     //gli resetto la destinazione e lo faccio ruotare attorno al player sull'asse y di 45° al secondo
     public void Orbitate()
     {
@@ -96,4 +104,5 @@ public class Wisp : MonoBehaviour
         yield return new WaitForSeconds(5);
         hasStopped = true;
     }
+    #endregion
 }
