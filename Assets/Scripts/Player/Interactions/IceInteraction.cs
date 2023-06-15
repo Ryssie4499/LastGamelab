@@ -12,6 +12,7 @@ public class IceInteraction : WispInteraction
 
     protected override void Interact(Collider collider)
     {
+        
         IIceable iceable = collider.GetComponent<IIceable>();
 
         if (iceable == null)

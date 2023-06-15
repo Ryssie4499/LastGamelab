@@ -17,7 +17,7 @@ public abstract class Interaction : MonoBehaviour
 
     protected Collider GetClosestInteractable()
     {
-        Collider[] colliders = Physics.OverlapBox(CalculateHitboxPosition(), hitboxDimension, transform.rotation, interactMask);
+        Collider[] colliders = Physics.OverlapBox(CalculateHitboxPosition(), hitboxDimension, transform.rotation, interactMask, QueryTriggerInteraction.Ignore);
         if (colliders.Length == 0) return null;
 
         Collider closest = null;

@@ -45,5 +45,18 @@ public class PlayerController : MonoBehaviour
         rb.velocity = dir * speed * Time.fixedDeltaTime;
     }
 
+    private void OnEnable()
+    {
+        UIButtons.OnReset += Reset;
+    }
 
+    private void OnDisable()
+    {
+        UIButtons.OnReset -= Reset;
+    }
+
+    public void Reset()
+    {
+        rb.MovePosition(ResetArea.CurrentResetArea.playerResetPoint.position);
+    }
 }

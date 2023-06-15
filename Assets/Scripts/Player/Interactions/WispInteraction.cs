@@ -32,7 +32,7 @@ public abstract class WispInteraction : Interaction
         {
             Totem(collider);
         }
-        else if (wisp.isInTotem)
+        else if (!wisp.isInTotem)
         {
             Interact(collider);
         }

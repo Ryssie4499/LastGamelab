@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System;
 
 public class UIButtons : MonoBehaviour
 {
@@ -58,11 +59,18 @@ public class UIButtons : MonoBehaviour
     //public void USURE()
     //{
     //    USureMenu.SetActive(true);
-    //}
+
+
+    public static Action OnReset;
     public void RESETLEVEL()
     {
-
+        if(ResetArea.CurrentResetArea)
+        {
+            ResetArea.CurrentResetArea.Reset();
+            OnReset?.Invoke();
+        }
     }
+
     public void MAINMENU()
     {
         USureMenu.SetActive(true);

@@ -110,4 +110,20 @@ public class Wisp : MonoBehaviour
         hasStopped = true;
     }
     #endregion
+
+    private void OnEnable()
+    {
+        UIButtons.OnReset += Reset;
+    }
+
+    private void OnDisable()
+    {
+        UIButtons.OnReset -= Reset;
+    }
+
+    public void Reset()
+    {
+        agent.SetDestination(followPoint.position);
+        transform.position = followPoint.position;
+    }
 }
