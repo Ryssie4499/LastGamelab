@@ -21,106 +21,106 @@ public class buttonFunctionsSO : ScriptableObject
 
     [SerializeField] CurrentAction currentAction;
 
-    public void RunButton()
+    public void RunButton(UIButtons button)
     {
         if(currentAction == CurrentAction.startGame)
         {
-            StartGame();
+            StartGame(button);
         }
 
         if (currentAction == CurrentAction.Controls)
         {
-            Controls();
+            Controls(button);
         }
 
         if (currentAction == CurrentAction.quitGame)
         {
-            QuitGame();
+            QuitGame(button);
         }
 
         if (currentAction == CurrentAction.resetLevel)
         {
-            ResetLevel();
+            ResetLevel(button);
         }
 
         if (currentAction == CurrentAction.resume)
         {
-            Resume();
+            Resume(button);
         }
 
         if (currentAction == CurrentAction.mainMenu)
         {
-            MainMenu();
+            MainMenu(button);
         }
 
         if (currentAction == CurrentAction.volumeSlider)
         {
-            VolumeSlider();
+            VolumeSlider(button);
         }
 
         if (currentAction == CurrentAction.easterEgg)
         {
-            EasterEgg();
+            EasterEgg(button);
         }
 
         if (currentAction == CurrentAction.goBack)
         {
-            GoBack();
+            GoBack(button);
         }
     }
 
 
-    void StartGame()
+    void StartGame(UIButtons button)
     {
-        UIButtons.Instance.PLAY();
+        button.PLAY();
         Debug.Log("StartGame pressed");
     }
 
-    void Controls()
+    void Controls(UIButtons button)
     {
-        UIButtons.Instance.KEYMAP();
+        button.KEYMAP();
         Debug.Log("Controls pressed");
     }
 
-    void QuitGame()
+    void QuitGame(UIButtons button)
     {
-        UIButtons.Instance.EXIT();
+        button.EXIT();
         Debug.Log("QuitGame pressed");
     }
 
-    void ResetLevel()
+    void ResetLevel(UIButtons button)
     {
-        UIButtons.Instance.RESETLEVEL();
+        button.RESETLEVEL();
         Debug.Log("Reset Level pressed");
     }
 
-    void Resume()
+    void Resume(UIButtons button)
     {
-        UIButtons.Instance.PLAY();
+        button.PLAY();
         Debug.Log("Resume pressed");
     }
 
-    void MainMenu()
+    void MainMenu(UIButtons button)
     {
-        UIButtons.Instance.MAINMENU();
+        button.MAINMENU();
         Debug.Log("Main Menu pressed");
     }
 
-    void VolumeSlider()
+    void VolumeSlider(UIButtons button)
     {
-        UIButtons.Instance.VOLUME();
+        button.VOLUME();
         Debug.Log("Volume Slider pressed");
     }
 
-    void EasterEgg()
+    void EasterEgg(UIButtons button)
     {
-        UIButtons.Instance.EASTEREGG();
+        button.EASTEREGG();
         Debug.Log("Easter Egg pressed");
     }
 
-    void GoBack()
+    void GoBack(UIButtons button)
     {
-        UIButtons.Instance.CLOSE();
+        button.CLOSE();
         Debug.Log("GoBack pressed");
     }
 

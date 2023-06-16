@@ -10,11 +10,12 @@ public class ButtonController : MonoBehaviour
 
     [SerializeField] List<buttonFunctionsSO> functions;
     [SerializeField] List<Image> button;
-
+    UIButtons buttons;
     InputManager iM;
     void Start()
     {
         iM = GameManager.Instance.IM;
+        buttons= FindObjectOfType<UIButtons>();
     }
 
 
@@ -92,6 +93,6 @@ public class ButtonController : MonoBehaviour
 
     void RunButton()
     {
-        functions[index].RunButton();
+        functions[index].RunButton(buttons);
     }
 }
