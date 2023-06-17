@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,12 +17,14 @@ public class Enemy : MonoBehaviour
         health = StatsManager.Instance.EnemyHealth;
         if (enemy.selected == true)
         {
-            if (health <= 0 && gameObject != null)
+            if (StatsManager.Instance.counter % 2 == 0 && StatsManager.Instance.counter != 0 && gameObject != null && StatsManager.Instance.dead == false/* && StatsManager.Instance.dead == 0*/ || health<= 0)
             {
                 Debug.Log("Morto");
                 Destroy(gameObject);
+                //StatsManager.Instance.dead++;
+                StatsManager.Instance.dead = true;
             }
         }
     }
-    
+
 }
