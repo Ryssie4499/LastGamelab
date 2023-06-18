@@ -20,11 +20,13 @@ public class Wisp : MonoBehaviour
 
     [SerializeField] Transform mesh;
     public bool isInTotem;
+    public bool isInCombat;
     public Transform TotemSphere;
+    public Transform enemyPos;
 
     public GameObject Player;
     public bool hasStopped;
-
+    public GameObject[] enemies;
     private Transform agentTransform;
     private float height;
 
@@ -34,21 +36,34 @@ public class Wisp : MonoBehaviour
 
     private NavMeshAgent agent;
     Rigidbody playerRB;
-
+    UICombat combatStatus;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         playerRB = Player.GetComponent<Rigidbody>();
+        combatStatus = FindObjectOfType<UICombat>();
         height = mesh.position.y;
     }
 
     private void Update()
     {
-        if (isInTotem)
+        //foreach (GameObject enemy in enemies)
+        //{
+        //    if (enemy.GetComponent<EnemyNormalInt>().selected == true)
+        //    {
+        //        enemyPos = enemy.gameObject.transform;
+        //        Debug.Log(enemyPos);
+        //    }
+        //    else
+        //        continue;
+        //}
+
+
+        if (isInTotem && !isInCombat)
         {
             agent.SetDestination(TotemSphere.position);
         }
-        else
+        else if (!isInTotem && !isInCombat)
         {
             floatingOffset += Time.deltaTime;
 
@@ -81,6 +96,18 @@ public class Wisp : MonoBehaviour
                 Orbitate();
             #endregion
 
+        }
+        else if (isInCombat)
+        {
+            floatingOffset += Time.deltaTime;
+
+            Vector3 position = mesh.position;
+            position.y = height + Mathf.Sin((seed + floatingOffset) * floatingFrequency) * floatingAmount;
+            mesh.position = position;
+            if (!combatStatus.attack)
+                agent.SetDestination(followPoint.position);
+            else
+                agent.SetDestination(enemyPos.position);
         }
     }
 

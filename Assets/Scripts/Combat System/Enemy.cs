@@ -21,10 +21,16 @@ public class Enemy : MonoBehaviour
             {
                 Debug.Log("Morto");
                 Destroy(gameObject);
+                //gameObject.SetActive(false);
+                //StartCoroutine(Death());
                 //StatsManager.Instance.dead++;
                 StatsManager.Instance.dead = true;
             }
         }
     }
-
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(0.2f);
+        enemy.selected = false;
+    }
 }

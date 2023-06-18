@@ -20,6 +20,7 @@ public class UICombat : MonoBehaviour
     private string rispostaGiusta;
     private string rispostaAttuale;
     private int mistakesCounter;
+    public bool attack;
     Color startColor;
     #endregion
     #region Questions
@@ -164,6 +165,8 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button1.GetComponent<Button>().colors = colors;
+            attack = true;
+            StartCoroutine(attackTime());
             MakeDamage(1);
         }
         //sbagliato
@@ -201,6 +204,8 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button2.GetComponent<Button>().colors = colors;
+            attack = true;
+            StartCoroutine(attackTime());
             MakeDamage(1);
         }
         //sbagliato
@@ -238,6 +243,8 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button3.GetComponent<Button>().colors = colors;
+            attack = true;
+            StartCoroutine(attackTime());
             MakeDamage(1);
         }
         //sbagliato
@@ -310,5 +317,10 @@ public class UICombat : MonoBehaviour
         button2.GetComponent<Button>().colors = color2;
         button3.GetComponent<Button>().colors = color3;
 
+    }
+    IEnumerator attackTime()
+    {
+        yield return new WaitForSeconds(0.8f);
+        attack = false;
     }
 }
