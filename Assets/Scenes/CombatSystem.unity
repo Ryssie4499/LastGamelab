@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17542705, g: 0.2118642, b: 0.2582219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1074,11 +1074,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6761757593214551806, guid: 7b419945031f92e4da1254571c983d60,
         type: 3}
-      propertyPath: mesh
-      value: 
-      objectReference: {fileID: 169579453}
-    - target: {fileID: 6761757593214551806, guid: 7b419945031f92e4da1254571c983d60,
-        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 88643079}
@@ -1089,16 +1084,6 @@ PrefabInstance:
       objectReference: {fileID: 1813196102}
     - target: {fileID: 6761757593214551806, guid: 7b419945031f92e4da1254571c983d60,
         type: 3}
-      propertyPath: isInTotem
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6761757593214551806, guid: 7b419945031f92e4da1254571c983d60,
-        type: 3}
-      propertyPath: isInCombat
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6761757593214551806, guid: 7b419945031f92e4da1254571c983d60,
-        type: 3}
       propertyPath: TotemSphere
       value: 
       objectReference: {fileID: 1903563411}
@@ -1107,11 +1092,6 @@ PrefabInstance:
       propertyPath: followPoint
       value: 
       objectReference: {fileID: 598966932}
-    - target: {fileID: 6761757593214551806, guid: 7b419945031f92e4da1254571c983d60,
-        type: 3}
-      propertyPath: enemies.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6761757593214551806, guid: 7b419945031f92e4da1254571c983d60,
         type: 3}
       propertyPath: enemies.Array.data[0]
@@ -1132,11 +1112,6 @@ PrefabInstance:
       propertyPath: enemies.Array.data[3]
       value: 
       objectReference: {fileID: 6434819}
-    - target: {fileID: 8579884199681965379, guid: 7b419945031f92e4da1254571c983d60,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 042e67d0d21c74848b88075e42cc2e11, type: 2}
     - target: {fileID: 9157513912753248908, guid: 7b419945031f92e4da1254571c983d60,
         type: 3}
       propertyPath: m_RootOrder
@@ -1193,14 +1168,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8093760175230755156, guid: 7b419945031f92e4da1254571c983d60, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6754512789092097573, guid: 7b419945031f92e4da1254571c983d60,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 169579455}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b419945031f92e4da1254571c983d60, type: 3}
 --- !u!4 &169579452 stripped
 Transform:
@@ -1208,40 +1178,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 169579451}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &169579453 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2973684789523229196, guid: 7b419945031f92e4da1254571c983d60,
-    type: 3}
-  m_PrefabInstance: {fileID: 169579451}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &169579454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6754512789092097573, guid: 7b419945031f92e4da1254571c983d60,
-    type: 3}
-  m_PrefabInstance: {fileID: 169579451}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &169579455
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169579454}
-  m_Enabled: 1
-  m_AgentTypeID: -1372625422
-  m_Radius: 0.5
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 2.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &175163879
 GameObject:
   m_ObjectHideFlags: 0
@@ -16697,6 +16633,36 @@ PrefabInstance:
     - target: {fileID: 793900265833588785, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: enemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 1070011702}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 654414403}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 658112915}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: enemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 6434819}
+    - target: {fileID: 4348080721914300398, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6944847951844775665, guid: 8c85ec481ad46e04fa4f0016719e9640,

@@ -38,19 +38,9 @@ public class StatsManager : MonoBehaviour
         EnemyHealth--;
         counter++;
         
-        if (counter % 2 == 0 && counter != 0 && dead == true)
+        if (counter % 2 == 0 && dead == true)
         {
-            dead = false;
-            int i = 0;
-            i = Random.Range(0, 4);
-            if (enemies[i] != null)
-                enemies[i].GetComponent<EnemyNormalInt>().selected = true;
-            else
-            {
-                CheckEnemyDeath(randomicNumber);
-                Debug.Log("Check");
-                enemies[randomicNumber].GetComponent<EnemyNormalInt>().selected = true;
-            }
+            StartCoroutine(Timer());
         }
     }
     void CheckEnemyDeath(int i)
@@ -61,5 +51,23 @@ public class StatsManager : MonoBehaviour
         }
         if (enemies[i] != null)
             randomicNumber = i;
+    }
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(2f);
+        dead = false;
+        int i = Random.Range(0, 4);
+        Debug.Log(i);
+        if (enemies[i] != null)
+        {
+            Debug.Log("Selezionato");
+            enemies[i].GetComponent<EnemyNormalInt>().selected = true;
+        }
+        else
+        {
+            CheckEnemyDeath(randomicNumber);
+            Debug.Log("Check");
+            enemies[randomicNumber].GetComponent<EnemyNormalInt>().selected = true;
+        }
     }
 }
