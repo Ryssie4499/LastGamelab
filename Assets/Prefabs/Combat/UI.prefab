@@ -969,7 +969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &177315250141979393
 Transform:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7618163019840161906
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2221,6 +2221,7 @@ MonoBehaviour:
   button2: {fileID: 4294269199358226549}
   button3: {fileID: 8277669370740109034}
   spiegazione: {fileID: 258246606788916047}
+  attack: 0
   player_hearts:
   - {fileID: 5771454928321774144}
   - {fileID: 6596319268198076958}
@@ -2238,6 +2239,11 @@ MonoBehaviour:
   - {fileID: 5595101328918856334}
   - {fileID: 360688732257156678}
   shadow_numOfHearts: 8
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8449260393594469387
 GameObject:
   m_ObjectHideFlags: 0

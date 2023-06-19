@@ -47,15 +47,20 @@ public class Wisp : MonoBehaviour
 
     private void Update()
     {
+        for (int i = 0; i<enemies.Length; i++)
+        {
+            if (enemies[i]!=null && enemies[i].GetComponent<EnemyNormalInt>().selected == true) 
+            {
+                enemyPos = enemies[i].gameObject.transform;
+            }
+        }
         //foreach (GameObject enemy in enemies)
         //{
-        //    if (enemy.GetComponent<EnemyNormalInt>().selected == true)
+        //    if (enemy.GetComponent<EnemyNormalInt>().selected == true && enemy!=null)
         //    {
         //        enemyPos = enemy.gameObject.transform;
         //        Debug.Log(enemyPos);
         //    }
-        //    else
-        //        continue;
         //}
 
 

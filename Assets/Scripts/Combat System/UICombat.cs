@@ -315,7 +315,7 @@ public class UICombat : MonoBehaviour
     }
     IEnumerator attackTime()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         attack = false;
     }
 }
