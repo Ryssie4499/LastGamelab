@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering;
 using UnityEngine;
 using System.Linq;
 
@@ -23,7 +22,6 @@ public class UICombat : MonoBehaviour
     private int mistakesCounter;
     public bool attack;
     Color startColor;
-    Renderer rend;
     #endregion
     #region Questions
     private string[] dom = new string[]
@@ -75,12 +73,6 @@ public class UICombat : MonoBehaviour
             SameAnswerCheck();
             HealthSystem();
         }
-        if (inputManager.Interact.triggered)
-        {
-            CombatCanvas.SetActive(true);
-            GameManager.Instance.gameState = GameManager.GameState.inMenu;
-        }
-
     }
     #region Damage
     public void TakeDamage(int damageAmount)
@@ -116,13 +108,13 @@ public class UICombat : MonoBehaviour
                 player_hearts[i].enabled = false;
             }
         }
-        if (StatsManager.Instance.EnemyHealth < shadow_numOfHearts)
+        if (StatsManager.Instance.TotalEnemyHealth < shadow_numOfHearts)
         {
-            shadow_numOfHearts = StatsManager.Instance.EnemyHealth;
+            shadow_numOfHearts = StatsManager.Instance.TotalEnemyHealth;
         }
         for (int i = 0; i < shadow_hearts.Length; i++)
         {
-            if (i < StatsManager.Instance.EnemyHealth)
+            if (i < StatsManager.Instance.TotalEnemyHealth)
             {
                 shadow_hearts[i].enabled = true;
             }
@@ -131,7 +123,7 @@ public class UICombat : MonoBehaviour
                 shadow_hearts[i].enabled = false;
             }
         }
-        if (StatsManager.Instance.EnemyHealth <= 0)
+        if (StatsManager.Instance.TotalEnemyHealth <= 0)
         {
             GameManager.Instance.gameState = GameManager.GameState.inGame;
             CombatCanvas.SetActive(false);
@@ -170,7 +162,6 @@ public class UICombat : MonoBehaviour
             button1.GetComponent<Button>().colors = colors;
             attack = true;
             StartCoroutine(attackTime());
-            changeColorEnemy();
             MakeDamage(1);
         }
         //sbagliato
@@ -210,7 +201,6 @@ public class UICombat : MonoBehaviour
             button2.GetComponent<Button>().colors = colors;
             attack = true;
             StartCoroutine(attackTime());
-            changeColorEnemy();
             MakeDamage(1);
         }
         //sbagliato
@@ -250,7 +240,6 @@ public class UICombat : MonoBehaviour
             button3.GetComponent<Button>().colors = colors;
             attack = true;
             StartCoroutine(attackTime());
-            changeColorEnemy();
             MakeDamage(1);
         }
         //sbagliato
@@ -328,27 +317,5 @@ public class UICombat : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         attack = false;
-    }
-
-    void changeColorEnemy()
-    {
-        for(int i = 0; i < enemies.Length; i++)
-        {
-            if (enemies[i] != null && enemies[i].GetComponent<EnemyNormalInt>().selected == true)
-            {
-                rend = enemies[i].GetComponent<Renderer>();
-                rend.material.SetFloat("_Power", 1.7f);
-            }
-        }
-        //foreach (GameObject enemy in enemies)
-        //{
-        //    if (enemy!=null&& enemy.GetComponent<EnemyNormalInt>().selected == true)
-        //    {
-        //        rend = enemy.GetComponent<Renderer>();
-        //        //rend.material.shader = Shader.Find("Shadow");
-        //        //Debug.Log(rend.material.shader);
-        //        rend.material.SetFloat("_Power", 1.7f);
-        //    }
-        //}
     }
 }

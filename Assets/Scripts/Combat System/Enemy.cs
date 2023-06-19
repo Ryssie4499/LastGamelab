@@ -2,12 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class Enemy : MonoBehaviour
 {
-    public float health;
+    public int health;
     EnemyNormalInt enemy;
+    Renderer rend;
     private void Start()
     {
         enemy = GetComponent<EnemyNormalInt>();
@@ -17,15 +17,15 @@ public class Enemy : MonoBehaviour
         health = StatsManager.Instance.EnemyHealth;
         if (enemy.selected == true)
         {
-            if (StatsManager.Instance.counter % 2 == 0 && StatsManager.Instance.counter != 0 && gameObject != null && StatsManager.Instance.dead == false/* && StatsManager.Instance.dead == 0*/ || health<= 0)
+            if (health == 1)
             {
-                Debug.Log("Morto");
+                rend = GetComponent<Renderer>();
+                rend.material.SetFloat("_Power", 1.7f);
+            }
+            if (health <= 0)
+            {
                 Destroy(gameObject);
-                
-                //StatsManager.Instance.dead++;
-                StatsManager.Instance.dead = true;
             }
         }
     }
-    
 }
