@@ -4101,8 +4101,8 @@ Transform:
   - {fileID: 7993525259353155816}
   - {fileID: 360716341}
   - {fileID: 88643081}
-  - {fileID: 9121711983418021032}
   - {fileID: 1836799312}
+  - {fileID: 9121711983418021032}
   - {fileID: 1739161908}
   - {fileID: 5500250314546740310}
   - {fileID: 1493615246}
@@ -4998,7 +4998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.95686275}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14540,7 +14540,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1836799312
 RectTransform:

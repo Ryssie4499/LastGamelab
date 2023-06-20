@@ -15,7 +15,7 @@ public class EnemyNormalInt : MonoBehaviour, INormalable
         if (selected)
         {
             UI.CombatCanvas.SetActive(true);
-            GameManager.Instance.gameState = GameManager.GameState.inMenu;
+            GameManager.Instance.gameState = GameManager.GameState.inCombat;
         }
     }
     public void NormalInteraction()

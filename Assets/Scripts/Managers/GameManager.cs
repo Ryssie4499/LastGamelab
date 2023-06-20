@@ -5,12 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-
-
-
-
-
-
     private static GameManager _instance;
 
 
@@ -32,8 +26,7 @@ public class GameManager : MonoBehaviour
         inPlayer,
         inMenu,
         inGame,
-        inCombat,
-
+        inCombat
     }
 
     public GameState gameState = GameState.inMenu;

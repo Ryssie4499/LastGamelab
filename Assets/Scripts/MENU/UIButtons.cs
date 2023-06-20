@@ -9,7 +9,7 @@ public class UIButtons : MonoBehaviour
 {
     InputManager iM;
     private static UIButtons _instance;
-
+    private bool combatTime;
     public GameObject StartMenu, PauseMenu, EndMenu, EasterEggMenu, KeymapMenu, USureMenu, VolumeMenu;
     public static UIButtons Instance
     {
@@ -33,9 +33,20 @@ public class UIButtons : MonoBehaviour
             GameManager.Instance.gameState = GameManager.GameState.inMenu;
             PauseMenu.SetActive(true);
         }
-        else if (GameManager.Instance.gameState == GameManager.GameState.inMenu && iM.Pause.triggered)
+        else if(iM.Pause.triggered && GameManager.Instance.gameState == GameManager.GameState.inCombat)
+        {
+            combatTime = true;
+            GameManager.Instance.gameState = GameManager.GameState.inMenu;
+            PauseMenu.SetActive(true);
+        }
+        else if (GameManager.Instance.gameState == GameManager.GameState.inMenu && iM.Pause.triggered && combatTime == false)
         {
             PLAY();
+        }
+        else if(GameManager.Instance.gameState == GameManager.GameState.inMenu && iM.Pause.triggered && combatTime == true)
+        {
+            PauseMenu.SetActive(false);
+            GameManager.Instance.gameState = GameManager.GameState.inCombat;
         }
     }
     public void EXIT()
