@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f94c63ad6eb1b5e4cb3f40c13d7196c6
+guid: 2da651fcea331934ba2d53bd775b8d1f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wine Bottle
-    second: {fileID: 2100000, guid: 1c8cc71a23c6ea84b9374f44ebd013db, type: 2}
+      name: BattleArena
+    second: {fileID: 2100000, guid: 855a157a598cc2c4aade9b3979e832cf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wine-Furniture
-    second: {fileID: 2100000, guid: 31e0243374adbc849b9459febfe0fa50, type: 2}
+      name: BattleArena-Bridge
+    second: {fileID: 2100000, guid: 9bab06b7c5acaf64498d529f3b52ac72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BattleArena-Floor
+    second: {fileID: 2100000, guid: 4e8f8be3774643a4ca6b428e7e1387de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BattleArena-Simbols
+    second: {fileID: 2100000, guid: a52dc29ce9c7fcd4cbf3439e5c8e87fc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1
