@@ -441,8 +441,8 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 512
-  hitboxPosition: {x: 0, y: 3, z: 3}
-  hitboxDimension: {x: 4, y: 4, z: 6}
+  hitboxPosition: {x: 0, y: 2, z: 2.5}
+  hitboxDimension: {x: 4, y: 4, z: 3}
   showGizmos: 1
   gizmosColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
 --- !u!114 &4791152915626975780
@@ -460,8 +460,8 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 4224
-  hitboxPosition: {x: 0, y: 3, z: 2.5}
-  hitboxDimension: {x: 2, y: 2, z: 2}
+  hitboxPosition: {x: 0, y: 2, z: 2.5}
+  hitboxDimension: {x: 4, y: 4, z: 3}
   showGizmos: 0
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   wisp: {fileID: 0}
@@ -480,7 +480,7 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 2112
-  hitboxPosition: {x: 0, y: 3, z: 2.5}
+  hitboxPosition: {x: 0, y: 2, z: 2.5}
   hitboxDimension: {x: 4, y: 4, z: 3}
   showGizmos: 0
   gizmosColor: {r: 0, g: 0.6119156, b: 0.8396226, a: 1}
@@ -500,7 +500,7 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 8448
-  hitboxPosition: {x: 0, y: 3, z: 2.5}
+  hitboxPosition: {x: 0, y: 2, z: 2.5}
   hitboxDimension: {x: 4, y: 4, z: 3}
   showGizmos: 0
   gizmosColor: {r: 0.032303438, g: 0.13207549, b: 0, a: 1}

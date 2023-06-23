@@ -32,9 +32,10 @@ public abstract class WispInteraction : Interaction
         {
             Totem(collider);
         }
-        else if (!wisp.isInTotem)
+        else if (wisp == null || !wisp.isInTotem)
         {
             Interact(collider);
+            Debug.Log(collider.name);
         }
     }
 

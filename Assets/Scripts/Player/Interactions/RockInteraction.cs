@@ -13,7 +13,7 @@ public class RockInteraction : WispInteraction
     protected override void Interact(Collider collider)
     {
         IRockable rockable = collider.GetComponent<IRockable>();
-
+        Debug.Log(rockable);
         if (rockable != null)
         {
             rockable.Rock();
