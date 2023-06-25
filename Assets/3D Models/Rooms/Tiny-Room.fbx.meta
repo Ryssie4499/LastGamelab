@@ -3,11 +3,26 @@ guid: 27d65d295803d48438b42c1bf2bb8642
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tiny Room-Floor
+    second: {fileID: 2100000, guid: b7317b5b2a91481419b1f49e21a186f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tiny Room-Top
+    second: {fileID: 2100000, guid: 8b6159f45b5dadd429b8c4c3aaaf8c1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tiny Room-Wall
+    second: {fileID: 2100000, guid: 9e9b6b8343e295f4db089aad090fdef8, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

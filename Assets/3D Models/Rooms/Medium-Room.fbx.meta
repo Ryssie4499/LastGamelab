@@ -3,11 +3,26 @@ guid: 2aacd5536b988404a9408982edaa16e3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Medium Room-Floor
+    second: {fileID: 2100000, guid: 51775a8ed348ede4aa7b14808075b9bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Medium Room-Top
+    second: {fileID: 2100000, guid: fd04405c819b92449ae707003067d2b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Medium Room-Wall
+    second: {fileID: 2100000, guid: aee66cb196b7abe46ab22d5fc2d9ae24, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
