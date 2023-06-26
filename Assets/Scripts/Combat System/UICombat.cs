@@ -20,7 +20,7 @@ public class UICombat : MonoBehaviour
     private string rispostaGiusta;
     private string rispostaAttuale;
     private int mistakesCounter;
-    public bool attack;
+    public Wisp[] wisp;
     Color startColor;
     #endregion
     #region Questions
@@ -53,6 +53,7 @@ public class UICombat : MonoBehaviour
             {dom[4], ris[4] }
         };
         randomIndex = UnityEngine.Random.Range(0, dom.Count());
+        wisp = FindObjectsOfType<Wisp>();
     }
     private void Start()
     {
@@ -160,8 +161,11 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button1.GetComponent<Button>().colors = colors;
-            attack = true;
-            StartCoroutine(attackTime());
+            for (int i = 0; i < wisp.Count(); i++)
+            {
+                if (wisp[i].typeOfWisp == TypeOfWisp.Rock)
+                    wisp[i].attack = true;
+            }
             MakeDamage(1);
         }
         //sbagliato
@@ -199,8 +203,11 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button2.GetComponent<Button>().colors = colors;
-            attack = true;
-            StartCoroutine(attackTime());
+            for (int i = 0; i < wisp.Count(); i++)
+            {
+                if (wisp[i].typeOfWisp == TypeOfWisp.Ice)
+                    wisp[i].attack = true;
+            }
             MakeDamage(1);
         }
         //sbagliato
@@ -238,8 +245,11 @@ public class UICombat : MonoBehaviour
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button3.GetComponent<Button>().colors = colors;
-            attack = true;
-            StartCoroutine(attackTime());
+            for (int i = 0; i < wisp.Count(); i++)
+            {
+                if (wisp[i].typeOfWisp == TypeOfWisp.Fire)
+                    wisp[i].attack = true;
+            }
             MakeDamage(1);
         }
         //sbagliato
@@ -313,9 +323,5 @@ public class UICombat : MonoBehaviour
         button3.GetComponent<Button>().colors = color3;
 
     }
-    IEnumerator attackTime()
-    {
-        yield return new WaitForSeconds(1f);
-        attack = false;
-    }
+    
 }

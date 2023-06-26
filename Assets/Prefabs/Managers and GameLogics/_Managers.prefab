@@ -223,8 +223,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: Fire.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Fire.m_SingletonActionBindings.Array.data[2].m_Path
       value: <Keyboard>/l
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Rock.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/1
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}

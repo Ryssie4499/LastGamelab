@@ -22,13 +22,17 @@ public class Wisp : MonoBehaviour
     public bool isInTotem;
     public bool isInCombat;
     public Transform TotemSphere;
-    public Transform enemyPos;
+    //public Transform enemyPos;
+    public bool attack;
 
     public GameObject Player;
     public bool hasStopped;
-    public GameObject[] enemies;
+    //public GameObject[] enemies;
     private Transform agentTransform;
+    public Transform attackPosition;
     private float height;
+
+    float timer;
 
     private float seed;
     private float floatingOffset;
@@ -36,30 +40,22 @@ public class Wisp : MonoBehaviour
 
     private NavMeshAgent agent;
     Rigidbody playerRB;
-    UICombat combatStatus;
+    //UICombat combatStatus;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         playerRB = Player.GetComponent<Rigidbody>();
-        combatStatus = FindObjectOfType<UICombat>();
+        //combatStatus = FindObjectOfType<UICombat>();
         height = mesh.position.y;
     }
 
     private void Update()
     {
-        for (int i = 0; i<enemies.Length; i++)
-        {
-            if (enemies[i]!=null && enemies[i].GetComponent<EnemyNormalInt>().selected == true) 
-            {
-                enemyPos = enemies[i].gameObject.transform;
-            }
-        }
-        //foreach (GameObject enemy in enemies)
+        //for (int i = 0; i<enemies.Length; i++)
         //{
-        //    if (enemy.GetComponent<EnemyNormalInt>().selected == true && enemy!=null)
+        //    if (enemies[i]!=null && enemies[i].GetComponent<EnemyNormalInt>().selected == true) 
         //    {
-        //        enemyPos = enemy.gameObject.transform;
-        //        Debug.Log(enemyPos);
+        //        enemyPos = enemies[i].gameObject.transform;
         //    }
         //}
 
@@ -109,10 +105,18 @@ public class Wisp : MonoBehaviour
             Vector3 position = mesh.position;
             position.y = height + Mathf.Sin((seed + floatingOffset) * floatingFrequency) * floatingAmount;
             mesh.position = position;
-            if (!combatStatus.attack)
+            if (!attack)
                 agent.SetDestination(followPoint.position);
-            else
-                agent.SetDestination(enemyPos.position);
+            if(attack)
+            {
+                agent.SetDestination(attackPosition.position);
+                timer += Time.deltaTime;
+                if (timer >= 1f)
+                {
+                    attack = false;
+                    timer = 0f;
+                }
+            }
         }
     }
 

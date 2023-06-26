@@ -1058,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 571, y: -214}
+  m_AnchoredPosition: {x: 571, y: -353.7}
   m_SizeDelta: {x: 400, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5350508701503941977
@@ -1979,7 +1979,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 571, y: -354}
+  m_AnchoredPosition: {x: 571, y: -212.8}
   m_SizeDelta: {x: 400, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &221710966806988309
@@ -2221,7 +2221,10 @@ MonoBehaviour:
   button2: {fileID: 4294269199358226549}
   button3: {fileID: 8277669370740109034}
   spiegazione: {fileID: 258246606788916047}
-  attack: 0
+  wisp:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player_hearts:
   - {fileID: 5771454928321774144}
   - {fileID: 6596319268198076958}
