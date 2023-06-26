@@ -168,6 +168,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: Ice.m_SingletonActionBindings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Fire.m_SingletonActionBindings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Rock.m_SingletonActionBindings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Select.m_SingletonActionBindings.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -179,12 +194,42 @@ PrefabInstance:
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
       propertyPath: Interact.m_SingletonActionBindings.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
       propertyPath: downMenu.m_SingletonActionBindings.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Ice.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 2974c92a-2e91-4e27-91d9-9b5abb685832
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Fire.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 64c6c4fb-9df6-483c-ae1d-886006a79bc8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Rock.m_SingletonActionBindings.Array.data[2].m_Id
+      value: f051b518-2675-48ce-b7fb-b706da3a62ad
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Ice.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/k
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Fire.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/l
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Rock.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/j
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
@@ -198,8 +243,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: Ice.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Fire.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Id
       value: 34879569-0050-4808-b12e-ac6901abe62f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[1].m_Id
+      value: a98814c8-5b10-40d7-bd87-a8d079dc7ce2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Rock.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
@@ -223,6 +288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/buttonSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Select.m_SingletonActionBindings.Array.data[1].m_Action
       value: Select
       objectReference: {fileID: 0}
@@ -239,6 +309,11 @@ PrefabInstance:
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
       propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: Interact.m_SingletonActionBindings.Array.data[1].m_Action
       value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
