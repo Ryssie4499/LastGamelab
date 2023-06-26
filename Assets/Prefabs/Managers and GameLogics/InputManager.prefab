@@ -306,11 +306,11 @@ MonoBehaviour:
       m_Action: Pause
       m_Flags: 0
     m_Flags: 0
-  Interaction:
-    m_Name: Interaction
+  Interact:
+    m_Name: Interact
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 2d824c35-1f2f-44dd-852c-7eff0d57ea16
+    m_Id: a782ecbd-6994-40dd-a7cf-5e000195e5cd
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -338,6 +338,31 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Select
+      m_Flags: 0
+    m_Flags: 0
+  SelectWithController:
+    m_Name: Select With Controller
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3a0c6099-0d3e-47f0-8e21-2721101a4385
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2fb82206-5669-48f2-98ce-235dec1750f6
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select With Controller
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e09e6206-061a-459f-b5c6-45a9fd58e097
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select With Controller
       m_Flags: 0
     m_Flags: 0
   Back:
@@ -372,7 +397,23 @@ MonoBehaviour:
     m_Id: 19ad2ff2-b815-44cc-b1c6-cf384751dc61
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 00617dbf-aacf-4b46-b1ad-8c3ad5d621aa
+      m_Path: <Gamepad>/dpad/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Down Menu
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b0187384-7c71-457c-be98-7dae42f5a3ed
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Down Menu
+      m_Flags: 0
     m_Flags: 0
   UpMenu:
     m_Name: Up Menu
@@ -381,7 +422,23 @@ MonoBehaviour:
     m_Id: eea56dee-1bc5-42c2-89b3-d43dd1587881
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 626a07ae-ac89-4b1c-bad7-c820d5e9fdc3
+      m_Path: <Gamepad>/dpad/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Up Menu
+      m_Flags: 0
+    - m_Name: 
+      m_Id: ddba9f8f-0554-477a-948b-04db915113bb
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Up Menu
+      m_Flags: 0
     m_Flags: 0
   AnyKeybord:
     m_Name: Any Keybord
@@ -391,14 +448,6 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: bfcccf1e-3470-4de7-9bb6-8c74fe723846
-      m_Path: <Keyboard>/anyKey
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Any Keybord
-      m_Flags: 0
     - m_Name: 
       m_Id: ee369472-827c-4d7e-b6e2-a899e8cfbade
       m_Path: <Mouse>/delta
@@ -568,7 +617,15 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Any Pad
       m_Flags: 0
+    - m_Name: 
+      m_Id: fdf97a3c-d1d9-4dfb-95eb-49c4b631d185
+      m_Path: <Keyboard>/anyKey
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Any Pad
+      m_Flags: 0
     m_Flags: 0
   anyKeybord: 0
   anyPad: 0
-  usingKeybord: 0
+  usingKeybord: 1
