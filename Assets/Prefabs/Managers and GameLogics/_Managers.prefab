@@ -76,7 +76,7 @@ Transform:
   - {fileID: 1479824351804872803}
   - {fileID: 7512754660567940333}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5378195035777057801
 PrefabInstance:
@@ -189,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
       propertyPath: UpMenu.m_SingletonActionBindings.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
       propertyPath: downMenu.m_SingletonActionBindings.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
@@ -253,6 +253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: UpMenu.m_SingletonActionBindings.Array.data[1].m_Id
+      value: bbb89e29-abfb-4223-ab74-6060c56925ae
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Ice.m_SingletonActionBindings.Array.data[2].m_Action
       value: Ice
       objectReference: {fileID: 0}
@@ -288,8 +293,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: UpMenu.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/upArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: downMenu.m_SingletonActionBindings.Array.data[0].m_Id
       value: 87ed7a3b-9e33-4415-ba2d-a2dd5c5438ec
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: downMenu.m_SingletonActionBindings.Array.data[1].m_Id
+      value: d7cf3708-9999-48fc-909d-01827f66ba46
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
@@ -318,6 +333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: downMenu.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/downArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: Interact.m_SingletonActionBindings.Array.data[0].m_Action
       value: Interact
       objectReference: {fileID: 0}
@@ -329,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
       propertyPath: SelectWithController.m_SingletonActionBindings.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
@@ -343,8 +363,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}
+      propertyPath: SelectWithController.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 754dc9c4-2843-4cf7-aecc-140d3df8a542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
       propertyPath: SelectWithController.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Gamepad>/buttonSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
+        type: 3}
+      propertyPath: SelectWithController.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/space
       objectReference: {fileID: 0}
     - target: {fileID: 6770502706139305632, guid: de802ca56a5cabd45958b0c8003ad5ee,
         type: 3}

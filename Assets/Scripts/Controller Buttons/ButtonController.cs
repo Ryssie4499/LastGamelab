@@ -11,22 +11,29 @@ public class ButtonController : MonoBehaviour
     [SerializeField] List<buttonFunctionsSO> functions;
     [SerializeField] List<Image> button;
     UIButtons buttons;
+    UICombat combatButton;
     InputManager iM;
+
+
+
     void Start()
     {
         iM = GameManager.Instance.IM;
-        buttons= FindObjectOfType<UIButtons>();
+        buttons = FindObjectOfType<UIButtons>();
+        combatButton = FindObjectOfType<UICombat>();
     }
 
 
     void Update()
     {
         ControllIndex();
-        HighlightButton();
-        if (iM.SelectWithController.triggered)
-        {
-            RunButton();
-        }
+
+
+            HighlightButton();
+            if (iM.SelectWithController.triggered)
+            {
+                RunButton();
+            }
     }
 
 
@@ -93,6 +100,7 @@ public class ButtonController : MonoBehaviour
 
     void RunButton()
     {
-        functions[index].RunButton(buttons);
+        functions[index].RunButton(buttons,combatButton);
     }
+
 }

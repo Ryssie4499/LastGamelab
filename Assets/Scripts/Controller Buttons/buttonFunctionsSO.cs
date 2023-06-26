@@ -17,11 +17,14 @@ public class buttonFunctionsSO : ScriptableObject
         volumeSlider,
         easterEgg,
         goBack,
+        answer1,
+        answer2,
+        answer3
     }
 
     [SerializeField] CurrentAction currentAction;
 
-    public void RunButton(UIButtons button)
+    public void RunButton(UIButtons button, UICombat CombatButton)
     {
         if(currentAction == CurrentAction.startGame)
         {
@@ -66,6 +69,21 @@ public class buttonFunctionsSO : ScriptableObject
         if (currentAction == CurrentAction.goBack)
         {
             GoBack(button);
+        }
+
+        if(currentAction == CurrentAction.answer1)
+        {
+            Answer1(CombatButton);
+        }
+
+        if(currentAction == CurrentAction.answer2)
+        {
+            Answer2(CombatButton);
+        }
+
+        if(currentAction == CurrentAction.answer3)
+        {
+            Answer3(CombatButton);
         }
     }
 
@@ -124,5 +142,21 @@ public class buttonFunctionsSO : ScriptableObject
         Debug.Log("GoBack pressed");
     }
 
+    void Answer1(UICombat button)
+    {
+        button.Answer1();
+        Debug.Log("an1");
+    }
 
+    void Answer2(UICombat button)
+    {
+        button.Answer2();
+        Debug.Log("an2");
+    }
+
+    void Answer3(UICombat button)
+    {
+        button.Answer3();
+        Debug.Log("an3");
+    }
 }

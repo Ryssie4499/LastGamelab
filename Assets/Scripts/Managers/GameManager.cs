@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
 
     public enum GameState 
     { 
-        inPlayer,
         inMenu,
         inGame,
         inCombat
@@ -58,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     void controlMouse()
     {
-        if(gameState == GameState.inPlayer)
+        if(gameState == GameState.inGame)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
