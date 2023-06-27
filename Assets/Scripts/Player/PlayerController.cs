@@ -12,7 +12,11 @@ public class PlayerController : MonoBehaviour
     Vector3 movement;
     Vector3 offset;
     [SerializeField] float speed;
-    bool isMoving;
+    public float rotationSpeed;
+
+    [SerializeField] Transform mesh;
+    [SerializeField] Animator anim;
+
     void Start()
     {
         iM = GameManager.Instance.IM;
@@ -30,7 +34,12 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (GameManager.Instance.gameState == GameManager.GameState.inGame)
+        {
             MovePlayer(movement);
+            rotatrCar(movement);
+
+        }
+        moveAnim();
     }
 
 
@@ -58,5 +67,35 @@ public class PlayerController : MonoBehaviour
     public void Reset()
     {
         rb.MovePosition(ResetArea.CurrentResetArea.playerResetPoint.position);
+    }
+
+    void rotatrCar(Vector3 dir)
+    {
+        if (Mathf.Abs(iM.MoveHor.ReadValue<float>()) == 1 || Mathf.Abs(iM.MoveVert.ReadValue<float>()) == 1)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
+            mesh.rotation = Quaternion.RotateTowards(mesh.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+            Debug.Log("rotate Char" + dir);
+        }
+    }
+
+    void moveAnim()
+    {
+        if ((GameManager.Instance.gameState == GameManager.GameState.inGame))
+        {
+            if (Mathf.Abs(iM.MoveHor.ReadValue<float>()) == 1 || Mathf.Abs(iM.MoveVert.ReadValue<float>()) == 1)
+            {
+                anim.SetBool("Moving", true);
+            }
+            else
+            {
+                anim.SetBool("Moving", false);
+            }
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
+        }
     }
 }
