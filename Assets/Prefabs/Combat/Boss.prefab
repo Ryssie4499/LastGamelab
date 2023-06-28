@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2432051544083702503}
   - component: {fileID: 6288580342954452393}
   - component: {fileID: 7017501339320768405}
-  - component: {fileID: 8077612665974069888}
+  - component: {fileID: 8899668584736155937}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
---- !u!114 &8077612665974069888
+--- !u!114 &8899668584736155937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9050986019350269158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4009f773f2632784bb5a28ce957b20ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bc5dbaa85ab3954d83e8b45f4e804cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 8

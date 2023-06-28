@@ -13,7 +13,7 @@ public class UICombat : MonoBehaviour
     public static event Action OnWrongChoice;
     public GameObject CombatCanvas;
     [SerializeField] TextMeshProUGUI domandaTxt, risposta1Txt, risposta2Txt, risposta3Txt;
-    //public GameObject BossCanvas;
+
     #region Answers
     public GameObject button1, button2, button3, spiegazione;
     private string[] ris = new string[] { "Muffin", "Crostata", "Biscotti", "Budino", "Krapfen" };
@@ -39,8 +39,12 @@ public class UICombat : MonoBehaviour
     public int player_numOfHearts;
     public Image[] shadow_hearts;
     public int shadow_numOfHearts;
+    public Image[] boss_hearts;
+    public int boss_numOfHearts;
     #endregion
     public GameObject[] enemies;
+    public GameObject shadowLife;
+    public GameObject bossLife;
     int randomIndex;
     InputManager inputManager;
     private void Awake()
@@ -86,7 +90,10 @@ public class UICombat : MonoBehaviour
     public void MakeDamage(int damageAmount)
     {
         StartCoroutine(timeColorChange());
-        shadow_numOfHearts -= damageAmount;
+        if (enemies == null)
+            boss_numOfHearts -= damageAmount;
+        else
+            shadow_numOfHearts -= damageAmount;
         OnRightChoice?.Invoke();
     }
     void HealthSystem()
@@ -110,26 +117,59 @@ public class UICombat : MonoBehaviour
                 player_hearts[i].enabled = false;
             }
         }
-        if (StatsManager.Instance.TotalEnemyHealth < shadow_numOfHearts)
+
+
+        if (enemies == null)
         {
-            shadow_numOfHearts = StatsManager.Instance.TotalEnemyHealth;
-        }
-        for (int i = 0; i < shadow_hearts.Length; i++)
-        {
-            if (i < StatsManager.Instance.TotalEnemyHealth)
+            if (StatsManager.Instance.BossHealth < boss_numOfHearts)
             {
-                shadow_hearts[i].enabled = true;
+                boss_numOfHearts = StatsManager.Instance.BossHealth;
             }
-            else
+            for (int j = 0; j < boss_hearts.Length; j++)
             {
-                shadow_hearts[i].enabled = false;
+                if (j < StatsManager.Instance.BossHealth)
+                {
+                    boss_hearts[j].enabled = true;
+                }
+                else
+                {
+                    boss_hearts[j].enabled = false;
+                }
+            }
+            if (StatsManager.Instance.BossHealth == 0)
+            {
+                GameManager.Instance.gameState = GameManager.GameState.inGame;
+                CombatCanvas.SetActive(false);
+                bossLife.SetActive(false);
+                shadowLife.SetActive(true);
             }
         }
-        if (StatsManager.Instance.TotalEnemyHealth <= 0)
+        else
         {
-            GameManager.Instance.gameState = GameManager.GameState.inGame;
-            CombatCanvas.SetActive(false);
+            if (StatsManager.Instance.TotalEnemyHealth < shadow_numOfHearts)
+            {
+                shadow_numOfHearts = StatsManager.Instance.TotalEnemyHealth;
+            }
+            for (int j = 0; j < shadow_hearts.Length; j++)
+            {
+                if (j < StatsManager.Instance.TotalEnemyHealth)
+                {
+                    shadow_hearts[j].enabled = true;
+                }
+                else
+                {
+                    shadow_hearts[j].enabled = false;
+                }
+            }
+            if (StatsManager.Instance.TotalEnemyHealth == 0)
+            {
+                GameManager.Instance.gameState = GameManager.GameState.inGame;
+                CombatCanvas.SetActive(false);
+                shadowLife.SetActive(false);
+                bossLife.SetActive(true);
+            }
         }
+
     }
     #endregion
     void SameAnswerCheck()
@@ -324,5 +364,5 @@ public class UICombat : MonoBehaviour
         button3.GetComponent<Button>().colors = color3;
 
     }
-    
+
 }

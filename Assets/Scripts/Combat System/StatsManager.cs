@@ -41,10 +41,21 @@ public class StatsManager : MonoBehaviour
     }
     private void MakeDamage()
     {
-        EnemyHealth--;
-        TotalEnemyHealth--;
-        if (EnemyHealth <= 0 && TotalEnemyHealth>0)
+        if (enemies == null)
+        {
+            BossHealth--;
+        }
+        else
+        {
+            EnemyHealth--;
+            TotalEnemyHealth--;
+        }
+        if (EnemyHealth <= 0 && TotalEnemyHealth > 0)
             StartCoroutine(timeBeforeRestoreHealth());
+        if(BossHealth<=0)
+        {
+            StartCoroutine(timeBeforeRestoreCanvas());
+        }
     }
     IEnumerator timeBeforeRestoreHealth()
     {
@@ -52,9 +63,15 @@ public class StatsManager : MonoBehaviour
         EnemyHealth = 2;
         OnRandomChoice?.Invoke();
     }
+    IEnumerator timeBeforeRestoreCanvas()
+    {
+        yield return new WaitForSeconds(0.4f);
+        EnemyHealth = 6;
+        BossHealth = 8;
+    }
     void RandomicChoiceOfEnemy()
     {
-        int i = UnityEngine.Random.Range(0, 4);
+        int i = UnityEngine.Random.Range(0, 3);
         if (enemies[i] != null)
         {
             enemies[i].GetComponent<EnemyNormalInt>().selected = true;
@@ -69,7 +86,7 @@ public class StatsManager : MonoBehaviour
     {
         while (enemies[i] == null)
         {
-            i = UnityEngine.Random.Range(0, 4);
+            i = UnityEngine.Random.Range(0, 3);
         }
         if (enemies[i] != null)
             randomicNumber = i;
