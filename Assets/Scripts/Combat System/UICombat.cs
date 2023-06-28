@@ -141,6 +141,7 @@ public class UICombat : MonoBehaviour
             if (StatsManager.Instance.BossHealth == 0)
             {
                 GameManager.Instance.gameState = GameManager.GameState.inGame;
+                cM.changeToPlayerCam();
                 CombatCanvas.SetActive(false);
                 bossLife.SetActive(false);
                 shadowLife.SetActive(true);
@@ -148,7 +149,7 @@ public class UICombat : MonoBehaviour
         }
         else
         {
-<<<<<<< HEAD
+
             if (StatsManager.Instance.TotalEnemyHealth < shadow_numOfHearts)
             {
                 shadow_numOfHearts = StatsManager.Instance.TotalEnemyHealth;
@@ -170,12 +171,8 @@ public class UICombat : MonoBehaviour
                 CombatCanvas.SetActive(false);
                 shadowLife.SetActive(false);
                 bossLife.SetActive(true);
+                cM.changeToPlayerCam();
             }
-=======
-            GameManager.Instance.gameState = GameManager.GameState.inGame;
-            CombatCanvas.SetActive(false);
-            cM.changeToPlayerCam();
->>>>>>> 8641918 (GarbageCollector Fix)
         }
 
     }
