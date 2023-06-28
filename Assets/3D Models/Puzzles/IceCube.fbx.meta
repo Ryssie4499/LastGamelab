@@ -1,13 +1,23 @@
 fileFormatVersion: 2
-guid: e0d8f1aba56c37e40ba505e16cb814e7
+guid: 48096d41ead54d549ae2a30207abdfed
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IceCube
+    second: {fileID: 2100000, guid: f4e8454e710d7ff41835a58d3f6f0ab0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IceCube-Emissive
+    second: {fileID: 2100000, guid: 67b30edf488824541888fe4a1858b243, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
