@@ -15,11 +15,6 @@ public class CamManager : MonoBehaviour
         changeToPlayerCam();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void changeToEnemyCam()
     {
 
