@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameState gameState = GameState.inMenu;
 
     InputManager _iM;
+    CamManager _cM;
 
 
 
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
 
 
         _iM = FindObjectOfType<InputManager>();
+        _cM= FindObjectOfType<CamManager>();
     }
 
 
@@ -53,7 +55,7 @@ public class GameManager : MonoBehaviour
 
 
     public InputManager IM { get { return _iM; } set { _iM = value; } }
-
+    public CamManager CM { get { return _cM; } set { _cM = value; } }
 
     void controlMouse()
     {

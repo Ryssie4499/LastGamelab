@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
 
     [SerializeField] Transform mesh;
-    [SerializeField] Animator anim;
+[SerializeField] Animator anim;
 
     void Start()
     {
@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
         offset = new Vector3(1, 0, 1);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.Instance.gameState == GameManager.GameState.inGame)
@@ -36,10 +35,10 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.gameState == GameManager.GameState.inGame)
         {
             MovePlayer(movement);
-            rotatrCar(movement);
+           rotatrCar(movement);
 
         }
-        moveAnim();
+       moveAnim();
     }
 
 
@@ -75,8 +74,6 @@ public class PlayerController : MonoBehaviour
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             mesh.rotation = Quaternion.RotateTowards(mesh.rotation, toRotation, rotationSpeed * Time.deltaTime);
-
-            Debug.Log("rotate Char" + dir);
         }
     }
 

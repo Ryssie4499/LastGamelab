@@ -47,6 +47,7 @@ public class UICombat : MonoBehaviour
     public GameObject bossLife;
     int randomIndex;
     InputManager inputManager;
+    CamManager cM;
     private void Awake()
     {
         risposte = new Dictionary<string, string>
@@ -63,6 +64,7 @@ public class UICombat : MonoBehaviour
     private void Start()
     {
         inputManager = GameManager.Instance.IM;
+        cM = GameManager.Instance.CM;
         domandaTxt.text = dom[randomIndex];
         rispostaGiusta = ris[randomIndex];
         CheckRightAnswer();
@@ -146,6 +148,7 @@ public class UICombat : MonoBehaviour
         }
         else
         {
+<<<<<<< HEAD
             if (StatsManager.Instance.TotalEnemyHealth < shadow_numOfHearts)
             {
                 shadow_numOfHearts = StatsManager.Instance.TotalEnemyHealth;
@@ -168,6 +171,11 @@ public class UICombat : MonoBehaviour
                 shadowLife.SetActive(false);
                 bossLife.SetActive(true);
             }
+=======
+            GameManager.Instance.gameState = GameManager.GameState.inGame;
+            CombatCanvas.SetActive(false);
+            cM.changeToPlayerCam();
+>>>>>>> 8641918 (GarbageCollector Fix)
         }
 
     }
