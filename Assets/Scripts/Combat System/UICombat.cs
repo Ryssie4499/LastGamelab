@@ -13,6 +13,7 @@ public class UICombat : MonoBehaviour
     public static event Action OnWrongChoice;
     public GameObject CombatCanvas;
     [SerializeField] TextMeshProUGUI domandaTxt, risposta1Txt, risposta2Txt, risposta3Txt;
+    //public GameObject BossCanvas;
     #region Answers
     public GameObject button1, button2, button3, spiegazione;
     private string[] ris = new string[] { "Muffin", "Crostata", "Biscotti", "Budino", "Krapfen" };

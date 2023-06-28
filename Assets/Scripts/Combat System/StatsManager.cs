@@ -19,9 +19,9 @@ public class StatsManager : MonoBehaviour
     {
         instance = this;
         PlayerHealth = 5;
-        TotalEnemyHealth = 8;
+        TotalEnemyHealth = 6;
         EnemyHealth = 2;
-        BossHealth = 10;
+        BossHealth = 8;
     }
     private void OnEnable()
     {
