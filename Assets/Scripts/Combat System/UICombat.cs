@@ -13,7 +13,7 @@ public class UICombat : MonoBehaviour
     public static event Action OnWrongChoice;
     public GameObject CombatCanvas;
     [SerializeField] TextMeshProUGUI domandaTxt, risposta1Txt, risposta2Txt, risposta3Txt;
-
+    bool endEnemyCombat;
     #region Answers
     public GameObject button1, button2, button3, spiegazione;
     private string[] ris = new string[] { "Muffin", "Crostata", "Biscotti", "Budino", "Krapfen" };
@@ -92,7 +92,7 @@ public class UICombat : MonoBehaviour
     public void MakeDamage(int damageAmount)
     {
         StartCoroutine(timeColorChange());
-        if (enemies == null)
+        if (endEnemyCombat)
             boss_numOfHearts -= damageAmount;
         else
             shadow_numOfHearts -= damageAmount;
@@ -121,8 +121,10 @@ public class UICombat : MonoBehaviour
         }
 
 
-        if (enemies == null)
+        if (endEnemyCombat)
         {
+            Debug.Log("EndOfEnemies");
+            Debug.Log("Instance: " + StatsManager.Instance.BossHealth + ", numOfHearts = " + boss_numOfHearts);
             if (StatsManager.Instance.BossHealth < boss_numOfHearts)
             {
                 boss_numOfHearts = StatsManager.Instance.BossHealth;
@@ -138,18 +140,13 @@ public class UICombat : MonoBehaviour
                     boss_hearts[j].enabled = false;
                 }
             }
-            if (StatsManager.Instance.BossHealth == 0)
+            if (StatsManager.Instance.BossHealth <= 0)
             {
-                GameManager.Instance.gameState = GameManager.GameState.inGame;
                 cM.changeToPlayerCam();
-                CombatCanvas.SetActive(false);
-                bossLife.SetActive(false);
-                shadowLife.SetActive(true);
             }
         }
         else
         {
-
             if (StatsManager.Instance.TotalEnemyHealth < shadow_numOfHearts)
             {
                 shadow_numOfHearts = StatsManager.Instance.TotalEnemyHealth;
@@ -165,12 +162,13 @@ public class UICombat : MonoBehaviour
                     shadow_hearts[j].enabled = false;
                 }
             }
-            if (StatsManager.Instance.TotalEnemyHealth == 0)
+            if (StatsManager.Instance.TotalEnemyHealth <= 0)
             {
                 GameManager.Instance.gameState = GameManager.GameState.inGame;
                 CombatCanvas.SetActive(false);
                 shadowLife.SetActive(false);
                 bossLife.SetActive(true);
+                endEnemyCombat = true;
                 cM.changeToPlayerCam();
             }
         }

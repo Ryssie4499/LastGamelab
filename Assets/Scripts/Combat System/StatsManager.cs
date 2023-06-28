@@ -8,87 +8,49 @@ public class StatsManager : MonoBehaviour
     private static StatsManager instance;
     public static StatsManager Instance { get => instance; private set => instance = value; }
 
-    public static event Action OnRandomChoice;
     public int PlayerHealth { get; private set; }
-    public int TotalEnemyHealth { get; private set; }
-    public int EnemyHealth { get; private set; }
-    public int BossHealth { get; private set; }
-    public EnemyNormalInt[] enemies;
+    public int TotalEnemyHealth { get; set; }
+    public int BossHealth { get; set; }
+    public List<EnemyNormalInt> enemies;
     int randomicNumber;
     private void Awake()
     {
         instance = this;
         PlayerHealth = 5;
         TotalEnemyHealth = 6;
-        EnemyHealth = 2;
         BossHealth = 8;
     }
     private void OnEnable()
     {
         UICombat.OnWrongChoice += TakeDamage;
-        UICombat.OnRightChoice += MakeDamage;
-        OnRandomChoice += RandomicChoiceOfEnemy;
+        Enemy.OnRandomChoice += RandomicChoiceOfEnemy;
     }
     private void OnDisable()
     {
         UICombat.OnWrongChoice -= TakeDamage;
-        UICombat.OnRightChoice -= MakeDamage;
-        OnRandomChoice -= RandomicChoiceOfEnemy;
+        Enemy.OnRandomChoice -= RandomicChoiceOfEnemy;
     }
     private void TakeDamage()
     {
         PlayerHealth--;
     }
-    private void MakeDamage()
+    private void Update()
     {
-        if (enemies == null)
+        for (int i = 0; i < enemies.Count; i++)
         {
-            BossHealth--;
-        }
-        else
-        {
-            EnemyHealth--;
-            TotalEnemyHealth--;
-        }
-        if (EnemyHealth <= 0 && TotalEnemyHealth > 0)
-            StartCoroutine(timeBeforeRestoreHealth());
-        if(BossHealth<=0)
-        {
-            StartCoroutine(timeBeforeRestoreCanvas());
+            if (enemies[i] == null)
+                enemies.RemoveAt(i);
         }
     }
-    IEnumerator timeBeforeRestoreHealth()
+    public void RandomicChoiceOfEnemy()
     {
-        yield return new WaitForSeconds(0.4f);
-        EnemyHealth = 2;
-        OnRandomChoice?.Invoke();
+        StartCoroutine(timerBeforeChoice());
     }
-    IEnumerator timeBeforeRestoreCanvas()
+    IEnumerator timerBeforeChoice()
     {
-        yield return new WaitForSeconds(0.4f);
-        EnemyHealth = 6;
-        BossHealth = 8;
-    }
-    void RandomicChoiceOfEnemy()
-    {
-        int i = UnityEngine.Random.Range(0, 3);
-        if (enemies[i] != null)
-        {
-            enemies[i].GetComponent<EnemyNormalInt>().selected = true;
-        }
-        else
-        {
-            CheckEnemyDeath(randomicNumber);
-            enemies[randomicNumber].GetComponent<EnemyNormalInt>().selected = true;
-        }
-    }
-    void CheckEnemyDeath(int i)
-    {
-        while (enemies[i] == null)
-        {
-            i = UnityEngine.Random.Range(0, 3);
-        }
-        if (enemies[i] != null)
-            randomicNumber = i;
+        yield return new WaitForSeconds(0.1f);
+        int i = UnityEngine.Random.Range(0, enemies.Count-1);
+        enemies[i].GetComponent<EnemyNormalInt>().selected = true;
+        Debug.Log("Chosen " + i);
     }
 }
