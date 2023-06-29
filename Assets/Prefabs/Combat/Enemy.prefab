@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 4445859638476420913}
   - component: {fileID: 2336027769636170240}
   - component: {fileID: 8729041319586635403}
+  - component: {fileID: 729519588929097941}
+  - component: {fileID: 6563540799411830089}
+  - component: {fileID: 8703505161352112651}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -29,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5556102700086527643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.07, y: 1.64, z: 8.42}
-  m_LocalScale: {x: 2.1546493, y: 1.7210475, z: 2.1546493}
+  m_LocalScale: {x: 0.5236822, y: 0.41829637, z: 0.5236822}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,5 +124,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
+--- !u!114 &729519588929097941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556102700086527643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4009f773f2632784bb5a28ce957b20ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  maxHealth: 2
+--- !u!114 &6563540799411830089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556102700086527643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4009f773f2632784bb5a28ce957b20ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  maxHealth: 2
+--- !u!114 &8703505161352112651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556102700086527643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4009f773f2632784bb5a28ce957b20ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   health: 2
   maxHealth: 2

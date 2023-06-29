@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0c2bc2134c254eb439abab0e5dc64, type: 3}
   m_Name: 10_Madre
   m_EditorClassIdentifier: 
-  domanda: He will resent you, and will not want to see you anymore.
+  domanda: "It\u2019s your fault if he feels abandoned."
   rispostaGiusta: 
   risposteSbagliate: []

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0c2bc2134c254eb439abab0e5dc64, type: 3}
   m_Name: 9_Madre
   m_EditorClassIdentifier: 
-  domanda: Your son will blame you for what is happening.
+  domanda: He will resent you, and will not want to see you anymore.
   rispostaGiusta: 
   risposteSbagliate: []

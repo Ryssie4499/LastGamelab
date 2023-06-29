@@ -27,7 +27,6 @@ public class Wisp : MonoBehaviour
 
     public GameObject Player;
     public bool hasStopped;
-    //public GameObject[] enemies;
     private Transform agentTransform;
     public Transform attackPosition;
     private float height;
@@ -40,25 +39,15 @@ public class Wisp : MonoBehaviour
 
     private NavMeshAgent agent;
     Rigidbody playerRB;
-    //UICombat combatStatus;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         playerRB = Player.GetComponent<Rigidbody>();
-        //combatStatus = FindObjectOfType<UICombat>();
         height = mesh.position.y;
     }
 
     private void Update()
     {
-        //for (int i = 0; i<enemies.Length; i++)
-        //{
-        //    if (enemies[i]!=null && enemies[i].GetComponent<EnemyNormalInt>().selected == true) 
-        //    {
-        //        enemyPos = enemies[i].gameObject.transform;
-        //    }
-        //}
-
 
         if (isInTotem && !isInCombat)
         {
@@ -81,7 +70,7 @@ public class Wisp : MonoBehaviour
             }
             else if (playerRB.velocity.magnitude > 0.1f && coOrbitate != null)
             {
-                StopCoroutine(coOrbitate /*TimeToOrbitate()*/);
+                StopCoroutine(coOrbitate);
                 coOrbitate = null;
                 hasStopped = false;
             }
