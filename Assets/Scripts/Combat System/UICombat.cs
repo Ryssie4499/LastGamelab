@@ -88,15 +88,26 @@ public class UICombat : MonoBehaviour
         //bambino, madre, padre...
         if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Bambino)
         {
-            player.transform.position = firstCombatIn.position;
+            Teleport();
+            player.GetComponent<Rigidbody>().MovePosition(firstCombatIn.position);
         }
         if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Madre)
         {
-            player.transform.position = secondCombatIn.position;
+            Teleport();
+            player.GetComponent<Rigidbody>().MovePosition(secondCombatIn.position);
         }
         if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Padre)
         {
-            player.transform.position = thirdCombatIn.position;
+            Teleport();
+            player.GetComponent<Rigidbody>().MovePosition(thirdCombatIn.position);
+        }
+    }
+
+    private void Teleport()
+    {
+        foreach (var item in wisp)
+        {
+            item.Reset();
         }
     }
     #region Damage
