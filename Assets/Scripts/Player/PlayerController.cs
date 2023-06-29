@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     public float rotationSpeed;
 
-    [SerializeField] Transform mesh;
+    [SerializeField] public Transform mesh;
 [SerializeField] Animator anim;
 
     UICombat ui;
