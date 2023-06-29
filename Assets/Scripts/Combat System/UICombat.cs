@@ -61,7 +61,7 @@ public class UICombat : MonoBehaviour
     int domandaRNG;
     int slotRNG;
     public Area zona;
-
+    public GameObject MainCamera, Camera1, Camera2, Camera3;
     public GameObject player;
     public Transform firstCombatIn, secondCombatIn, thirdCombatIn, combatOut;
     private void Awake()
@@ -88,15 +88,32 @@ public class UICombat : MonoBehaviour
         //bambino, madre, padre...
         if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Bambino)
         {
-            player.transform.position = firstCombatIn.position;
+            MainCamera.SetActive(false);
+            Camera1.SetActive(true);
+            Teleport();
+            player.GetComponent<Rigidbody>().MovePosition(firstCombatIn.position);
         }
         if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Madre)
         {
-            player.transform.position = secondCombatIn.position;
+            MainCamera.SetActive(false);
+            Camera2.SetActive(true);
+            Teleport();
+            player.GetComponent<Rigidbody>().MovePosition(secondCombatIn.position);
         }
         if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Padre)
         {
-            player.transform.position = thirdCombatIn.position;
+            MainCamera.SetActive(false);
+            Camera3.SetActive(true);
+            Teleport();
+            player.GetComponent<Rigidbody>().MovePosition(thirdCombatIn.position);
+        }
+    }
+
+    public void Teleport()
+    {
+        foreach (var item in wisp)
+        {
+            item.Reset();
         }
     }
     #region Damage
@@ -343,7 +360,7 @@ public class UICombat : MonoBehaviour
 
             slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
             domandaRNG = UnityEngine.Random.Range(0, domandeBambino.Count);                                                    //creo una domanda randomica
-
+            domandaTxt.text = domandeBambino[domandaRNG].domanda;
             if (slotRNG == 0)                                                                                            //se la risposta giusta si trova sul pulsante 0
             {
                 risposta1Txt.text = domandeBambino[domandaRNG].rispostaGiusta;                                                 //la risposta 1 è la risposta giusta
@@ -389,7 +406,7 @@ public class UICombat : MonoBehaviour
 
             slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
             domandaRNG = UnityEngine.Random.Range(0, domandeMadre.Count);                                                    //creo una domanda randomica
-
+            domandaTxt.text = domandeMadre[domandaRNG].domanda;
             if (slotRNG == 0)                                                                                            //se la risposta giusta si trova sul pulsante 0
             {
                 risposta1Txt.text = domandeMadre[domandaRNG].rispostaGiusta;                                                 //la risposta 1 è la risposta giusta
@@ -435,7 +452,7 @@ public class UICombat : MonoBehaviour
 
             slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
             domandaRNG = UnityEngine.Random.Range(0, domandePadre.Count);                                                    //creo una domanda randomica
-
+            domandaTxt.text = domandePadre[domandaRNG].domanda;
             if (slotRNG == 0)                                                                                            //se la risposta giusta si trova sul pulsante 0
             {
                 risposta1Txt.text = domandePadre[domandaRNG].rispostaGiusta;                                                 //la risposta 1 è la risposta giusta

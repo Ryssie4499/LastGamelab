@@ -38,6 +38,8 @@ public class Boss : MonoBehaviour
                 ui.CombatCanvas.SetActive(false);
                 ui.bossLife.SetActive(false);
                 ui.shadowLife.SetActive(true);
+                //ui.player.transform.position = ui.combatOut.transform.position;
+                //ui.Teleport();
                 Destroy(gameObject);
             }
         }

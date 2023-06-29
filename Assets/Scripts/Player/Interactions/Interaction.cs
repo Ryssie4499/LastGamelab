@@ -8,7 +8,14 @@ public abstract class Interaction : MonoBehaviour
     [SerializeField] private Vector3 hitboxPosition;
     [SerializeField] private Vector3 hitboxDimension;
 
+    private PlayerController controller;
+
     protected InputManager inputManager;
+
+    private void Awake()
+    {
+        controller = GetComponent<PlayerController>();
+    }
 
     protected void Start()
     {
@@ -17,7 +24,7 @@ public abstract class Interaction : MonoBehaviour
 
     protected Collider GetClosestInteractable()
     {
-        Collider[] colliders = Physics.OverlapBox(CalculateHitboxPosition(), hitboxDimension, transform.rotation, interactMask, QueryTriggerInteraction.Ignore);
+        Collider[] colliders = Physics.OverlapBox(CalculateHitboxPosition(), hitboxDimension, controller.mesh.rotation, interactMask, QueryTriggerInteraction.Ignore);
         if (colliders.Length == 0) return null;
 
         Collider closest = null;
@@ -39,7 +46,7 @@ public abstract class Interaction : MonoBehaviour
 
     private Vector3 CalculateHitboxPosition()
     {
-        return transform.position + transform.right * hitboxPosition.x + transform.up * hitboxPosition.y + transform.forward * hitboxPosition.z;
+        return transform.position + controller.mesh.right * hitboxPosition.x + controller.mesh.up * hitboxPosition.y + controller.mesh.forward * hitboxPosition.z;
     }
 
 #if UNITY_EDITOR
