@@ -19651,6 +19651,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707265762}
     m_Modifications:
+    - target: {fileID: 258246606788916047, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 793900265833588785, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}
       propertyPath: m_RootOrder
@@ -19708,6 +19713,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}
+      propertyPath: bambino
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
       propertyPath: wisp.Array.data[0]
       value: 
       objectReference: {fileID: 11429745}
@@ -19723,6 +19738,66 @@ PrefabInstance:
       objectReference: {fileID: 169579454}
     - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}
+      propertyPath: domande.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a418ecace43d0434b870432fcd4d69ba,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 66209474c02f09341994337181289676,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a7545494dd01c44292f99ae9bd265ea,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c29e285595a7b114ebac30d3a49e9fc2,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c104bd8aade558428b5b66c40d57e9a,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 29de8098894dee94fb0142e9d85784b9,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 981736ecf4ef22d4d9168d3fec827b22,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 38ee0794553eda44d8d0459570657a49,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ed83557fb4e9c44c9ad96a721d55241,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b71426db2ee1b54394e1ae7a3b280d3,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
       objectReference: {fileID: 1070011702}
@@ -19736,15 +19811,242 @@ PrefabInstance:
       propertyPath: enemies.Array.data[2]
       value: 
       objectReference: {fileID: 658112915}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domande.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b71426db2ee1b54394e1ae7a3b280d3,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4451b4188eef8c0469ecac226dedd5b9,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f95c6d7785cbf8347b89aa80b6c68ecd,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ab57d699f0654547b56fd535cc819cd,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d3b594588cbe9a4886bd5cc5bb6799b,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3bb211c961a372d47abb4da5e2598c4b,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0540a720ee1b21a4dac436713f043211,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f5729c13553d81449eff621fa0e3a90,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 944f0a75638d2ef438e7d2f542a6ae47,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 741260d5134c3e847877ea415e936c6d,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: e076bc25c2cbc28499ea99d2bee11075,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 31ff08753130cc446ac2cb9ea93dec1f,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: eeeed9538aa4a974499608f1fda81957,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: fac789a0f8f76774282391bb46e771a1,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c1d49a7ef526f2c43a71bee77e35397d,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cfe9b7164923e248a0b630bc70f2309,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 07264c84afd38c545bc8f31315841dad,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: cb2bb089e57e89341a2c13393e7cbc39,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 44a4d6530ef77f54ea9b7f9ddf3382f3,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: dfae164659a4a874f9ce9acb2c8d117c,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandePadre.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bd788339cde2074b85c45650e67058d,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeMadre.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 543bd2f04235a9f4f996f2b3968bb764,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a418ecace43d0434b870432fcd4d69ba,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 66209474c02f09341994337181289676,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a7545494dd01c44292f99ae9bd265ea,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c29e285595a7b114ebac30d3a49e9fc2,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c104bd8aade558428b5b66c40d57e9a,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 29de8098894dee94fb0142e9d85784b9,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 981736ecf4ef22d4d9168d3fec827b22,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 38ee0794553eda44d8d0459570657a49,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ed83557fb4e9c44c9ad96a721d55241,
+        type: 2}
+    - target: {fileID: 1180165697206314274, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: domandeBambino.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b71426db2ee1b54394e1ae7a3b280d3,
+        type: 2}
     - target: {fileID: 1243046910032748524, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1757008611922137761, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -212
+      objectReference: {fileID: 0}
     - target: {fileID: 4184250252336130556, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294269199358226549, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797976177596409234, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -360
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956536694295553646, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5581961430923104095, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}
@@ -19755,6 +20057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8277669370740109034, guid: 8c85ec481ad46e04fa4f0016719e9640,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8331026592631941638, guid: 8c85ec481ad46e04fa4f0016719e9640,
         type: 3}

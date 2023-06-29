@@ -16,23 +16,23 @@ public class UICombat : MonoBehaviour
     bool endEnemyCombat;
     #region Answers
     public GameObject button1, button2, button3, spiegazione;
-    private string[] ris = new string[] { "Muffin", "Crostata", "Biscotti", "Budino", "Krapfen" };
-    private Dictionary<string, string> risposte;
-    private string rispostaGiusta;
-    private string rispostaAttuale;
+    //private string[] ris = new string[] { "Muffin", "Crostata", "Biscotti", "Budino", "Krapfen" };
+    //private Dictionary<string, string> risposte;
+    //private string rispostaGiusta;
+    //private string rispostaAttuale;
     private int mistakesCounter;
     public Wisp[] wisp;
     Color startColor;
     #endregion
     #region Questions
-    private string[] dom = new string[]
-    {
-        "Ciao, mi chiamo Mario e non mi piacciono i MUFFIN",
-        "Ciao, mi chiamo Alfonso e odio la CROSTATA",
-        "Ciao, mi chiamo Gesualdo e mi fanno schifo i BISCOTTI",
-        "Ciao, mi chiamo Ingrid e non sopporto il BUDINO",
-        "Ciao, mi chiamo Doris e sono una KRAPFEN-hater"
-    };
+    //private string[] dom = new string[]
+    //{
+    //    "Ciao, mi chiamo Mario e non mi piacciono i MUFFIN",
+    //    "Ciao, mi chiamo Alfonso e odio la CROSTATA",
+    //    "Ciao, mi chiamo Gesualdo e mi fanno schifo i BISCOTTI",
+    //    "Ciao, mi chiamo Ingrid e non sopporto il BUDINO",
+    //    "Ciao, mi chiamo Doris e sono una KRAPFEN-hater"
+    //};
     #endregion
     #region Health
     public Image[] player_hearts;
@@ -48,26 +48,22 @@ public class UICombat : MonoBehaviour
     int randomIndex;
     InputManager inputManager;
     CamManager cM;
+
+    public bool bambino, madre, padre;
+    public List<domandeSO> domandeBambino;
+    public List<domandeSO> domandeMadre;
+    public List<domandeSO> domandePadre;
+    int domandaRNG;
+    int slotRNG;
     private void Awake()
     {
-        risposte = new Dictionary<string, string>
-        {
-            {dom[0], ris[0] },
-            {dom[1], ris[1] },
-            {dom[2], ris[2] },
-            {dom[3], ris[3] },
-            {dom[4], ris[4] }
-        };
-        randomIndex = UnityEngine.Random.Range(0, dom.Count());
         wisp = FindObjectsOfType<Wisp>();
     }
     private void Start()
     {
         inputManager = GameManager.Instance.IM;
         cM = GameManager.Instance.CM;
-        domandaTxt.text = dom[randomIndex];
-        rispostaGiusta = ris[randomIndex];
-        CheckRightAnswer();
+        CreateQuestionsAndAnswers();
         var color = button1.GetComponent<Button>().colors;
         startColor = color.normalColor;
     }
@@ -78,7 +74,6 @@ public class UICombat : MonoBehaviour
             FireChoice();
             IceChoice();
             RockChoice();
-            SameAnswerCheck();
             HealthSystem();
         }
     }
@@ -175,33 +170,12 @@ public class UICombat : MonoBehaviour
 
     }
     #endregion
-    void SameAnswerCheck()
-    {
-        if (risposta1Txt.text == risposta2Txt.text || risposta1Txt.text == risposta3Txt.text || risposta2Txt.text == risposta3Txt.text)
-        {
-            CheckRightAnswer();
-        }
-        else
-        {
-            button1.SetActive(true);
-            button2.SetActive(true);
-            button3.SetActive(true);
-            spiegazione.SetActive(true);
-        }
-
-
-    }
     public void Answer1()
     {
         var colors = button1.GetComponent<Button>().colors;
-        rispostaAttuale = risposta1Txt.text;
-        //giusto
-        if (rispostaGiusta == rispostaAttuale)
+        if (slotRNG == 0)
         {
-            randomIndex = UnityEngine.Random.Range(0, dom.Count());
-            domandaTxt.text = dom[randomIndex];
-            rispostaGiusta = ris[randomIndex];
-            CheckRightAnswer();
+            CreateQuestionsAndAnswers();
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button1.GetComponent<Button>().colors = colors;
@@ -212,7 +186,6 @@ public class UICombat : MonoBehaviour
             }
             MakeDamage(1);
         }
-        //sbagliato
         else
         {
             mistakesCounter++;
@@ -226,24 +199,16 @@ public class UICombat : MonoBehaviour
             colors.normalColor = Color.red;
             button1.GetComponent<Button>().colors = colors;
             TakeDamage(1);
-            randomIndex = UnityEngine.Random.Range(0, dom.Count());
-            domandaTxt.text = dom[randomIndex];
-            rispostaGiusta = ris[randomIndex];
-            CheckRightAnswer();
+            CreateQuestionsAndAnswers();
             mistakesCounter = 0;
         }
     }
     public void Answer2()
     {
         var colors = button2.GetComponent<Button>().colors;
-        rispostaAttuale = risposta2Txt.text;
-        //giusto
-        if (rispostaGiusta == rispostaAttuale)
+        if (slotRNG == 1)
         {
-            randomIndex = UnityEngine.Random.Range(0, dom.Count());
-            domandaTxt.text = dom[randomIndex];
-            rispostaGiusta = ris[randomIndex];
-            CheckRightAnswer();
+            CreateQuestionsAndAnswers();
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button2.GetComponent<Button>().colors = colors;
@@ -254,7 +219,6 @@ public class UICombat : MonoBehaviour
             }
             MakeDamage(1);
         }
-        //sbagliato
         else
         {
             mistakesCounter++;
@@ -265,10 +229,7 @@ public class UICombat : MonoBehaviour
         if (mistakesCounter == 2)
         {
             TakeDamage(1);
-            randomIndex = UnityEngine.Random.Range(0, dom.Count());
-            domandaTxt.text = dom[randomIndex];
-            rispostaGiusta = ris[randomIndex];
-            CheckRightAnswer();
+            CreateQuestionsAndAnswers();
             mistakesCounter = 0;
             colors.selectedColor = Color.red;
             colors.normalColor = Color.red;
@@ -278,14 +239,9 @@ public class UICombat : MonoBehaviour
     public void Answer3()
     {
         var colors = button3.GetComponent<Button>().colors;
-        rispostaAttuale = risposta3Txt.text;
-        //giusto
-        if (rispostaGiusta == rispostaAttuale)
+        if (slotRNG == 2)
         {
-            randomIndex = UnityEngine.Random.Range(0, dom.Count());
-            domandaTxt.text = dom[randomIndex];
-            rispostaGiusta = ris[randomIndex];
-            CheckRightAnswer();
+            CreateQuestionsAndAnswers();
             colors.selectedColor = Color.green;
             colors.normalColor = Color.green;
             button3.GetComponent<Button>().colors = colors;
@@ -296,7 +252,6 @@ public class UICombat : MonoBehaviour
             }
             MakeDamage(1);
         }
-        //sbagliato
         else
         {
             mistakesCounter++;
@@ -307,24 +262,12 @@ public class UICombat : MonoBehaviour
         if (mistakesCounter == 2)
         {
             TakeDamage(1);
-            randomIndex = UnityEngine.Random.Range(0, dom.Count());
-            domandaTxt.text = dom[randomIndex];
-            rispostaGiusta = ris[randomIndex];
-            CheckRightAnswer();
+            CreateQuestionsAndAnswers();
             mistakesCounter = 0;
             colors.selectedColor = Color.red;
             colors.normalColor = Color.red;
             button3.GetComponent<Button>().colors = colors;
         }
-    }
-    void CheckRightAnswer()
-    {
-        risposta1Txt.text = ris[UnityEngine.Random.Range(0, ris.Count())];
-        risposta2Txt.text = ris[UnityEngine.Random.Range(0, ris.Count())];
-        if (risposta1Txt.text != rispostaGiusta && risposta2Txt.text != rispostaGiusta)
-            risposta3Txt.text = rispostaGiusta;
-        else
-            risposta3Txt.text = ris[UnityEngine.Random.Range(0, ris.Count())];
     }
     void FireChoice()
     {
@@ -368,4 +311,147 @@ public class UICombat : MonoBehaviour
 
     }
 
+
+
+    int RS1RNG, RS2RNG;
+    void CreateQuestionsAndAnswers()
+    {
+        if (bambino == true)
+        {
+
+            slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
+            domandaRNG = UnityEngine.Random.Range(0, domandeBambino.Count);                                                    //creo una domanda randomica
+
+            if (slotRNG == 0)                                                                                            //se la risposta giusta si trova sul pulsante 0
+            {
+                risposta1Txt.text = domandeBambino[domandaRNG].rispostaGiusta;                                                 //la risposta 1 è la risposta giusta
+                RS1RNG = UnityEngine.Random.Range(0, domandeBambino[domandaRNG].risposteSbagliate.Length);                     //la risposta 2 è randomica tra quelle sbagliate
+                RS2RNG = UnityEngine.Random.Range(0, domandeBambino[domandaRNG].risposteSbagliate.Length);                     //la risposta 3 è randomica tra quelle sbagliate
+                while (RS2RNG == RS1RNG)                                                                                  //fintantochè la risposta 2 e la risposta 3 sono uguali
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);                                                       //la risposta 3 si randomizzerà tra 0 e la risposta 2
+                }
+                risposta2Txt.text = domandeBambino[domandaRNG].risposteSbagliate[RS1RNG];                                      //assegno le nuove risposte agli altri due slot
+                risposta3Txt.text = domandeBambino[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+
+            if (slotRNG == 1)
+            {
+                risposta2Txt.text = domandeBambino[domandaRNG].rispostaGiusta;
+                RS1RNG = UnityEngine.Random.Range(0, domandeBambino[domandaRNG].risposteSbagliate.Length);
+                RS2RNG = UnityEngine.Random.Range(0, domandeBambino[domandaRNG].risposteSbagliate.Length);
+                while (RS2RNG == RS1RNG)
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);
+                }
+                risposta1Txt.text = domandeBambino[domandaRNG].risposteSbagliate[RS1RNG];
+                risposta3Txt.text = domandeBambino[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+
+            if (slotRNG == 2)
+            {
+                risposta3Txt.text = domandeBambino[domandaRNG].rispostaGiusta;
+                RS1RNG = UnityEngine.Random.Range(0, domandeBambino[domandaRNG].risposteSbagliate.Length);
+                RS2RNG = UnityEngine.Random.Range(0, domandeBambino[domandaRNG].risposteSbagliate.Length);
+                while (RS2RNG == RS1RNG)
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);
+                }
+                risposta1Txt.text = domandeBambino[domandaRNG].risposteSbagliate[RS1RNG];
+                risposta2Txt.text = domandeBambino[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+        }
+
+        if (madre == true)
+        {
+
+            slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
+            domandaRNG = UnityEngine.Random.Range(0, domandeMadre.Count);                                                    //creo una domanda randomica
+
+            if (slotRNG == 0)                                                                                            //se la risposta giusta si trova sul pulsante 0
+            {
+                risposta1Txt.text = domandeMadre[domandaRNG].rispostaGiusta;                                                 //la risposta 1 è la risposta giusta
+                RS1RNG = UnityEngine.Random.Range(0, domandeMadre[domandaRNG].risposteSbagliate.Length);                     //la risposta 2 è randomica tra quelle sbagliate
+                RS2RNG = UnityEngine.Random.Range(0, domandeMadre[domandaRNG].risposteSbagliate.Length);                     //la risposta 3 è randomica tra quelle sbagliate
+                while (RS2RNG == RS1RNG)                                                                                  //fintantochè la risposta 2 e la risposta 3 sono uguali
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);                                                       //la risposta 3 si randomizzerà tra 0 e la risposta 2
+                }
+                risposta2Txt.text = domandeMadre[domandaRNG].risposteSbagliate[RS1RNG];                                      //assegno le nuove risposte agli altri due slot
+                risposta3Txt.text = domandeMadre[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+
+            if (slotRNG == 1)
+            {
+                risposta2Txt.text = domandeMadre[domandaRNG].rispostaGiusta;
+                RS1RNG = UnityEngine.Random.Range(0, domandeMadre[domandaRNG].risposteSbagliate.Length);
+                RS2RNG = UnityEngine.Random.Range(0, domandeMadre[domandaRNG].risposteSbagliate.Length);
+                while (RS2RNG == RS1RNG)
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);
+                }
+                risposta1Txt.text = domandeMadre[domandaRNG].risposteSbagliate[RS1RNG];
+                risposta3Txt.text = domandeMadre[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+
+            if (slotRNG == 2)
+            {
+                risposta3Txt.text = domandeMadre[domandaRNG].rispostaGiusta;
+                RS1RNG = UnityEngine.Random.Range(0, domandeMadre[domandaRNG].risposteSbagliate.Length);
+                RS2RNG = UnityEngine.Random.Range(0, domandeMadre[domandaRNG].risposteSbagliate.Length);
+                while (RS2RNG == RS1RNG)
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);
+                }
+                risposta1Txt.text = domandeMadre[domandaRNG].risposteSbagliate[RS1RNG];
+                risposta2Txt.text = domandeMadre[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+        }
+
+        if (padre == true)
+        {
+
+            slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
+            domandaRNG = UnityEngine.Random.Range(0, domandePadre.Count);                                                    //creo una domanda randomica
+
+            if (slotRNG == 0)                                                                                            //se la risposta giusta si trova sul pulsante 0
+            {
+                risposta1Txt.text = domandePadre[domandaRNG].rispostaGiusta;                                                 //la risposta 1 è la risposta giusta
+                RS1RNG = UnityEngine.Random.Range(0, domandePadre[domandaRNG].risposteSbagliate.Length);                     //la risposta 2 è randomica tra quelle sbagliate
+                RS2RNG = UnityEngine.Random.Range(0, domandePadre[domandaRNG].risposteSbagliate.Length);                     //la risposta 3 è randomica tra quelle sbagliate
+                while (RS2RNG == RS1RNG)                                                                                  //fintantochè la risposta 2 e la risposta 3 sono uguali
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);                                                       //la risposta 3 si randomizzerà tra 0 e la risposta 2
+                }
+                risposta2Txt.text = domandePadre[domandaRNG].risposteSbagliate[RS1RNG];                                      //assegno le nuove risposte agli altri due slot
+                risposta3Txt.text = domandePadre[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+
+            if (slotRNG == 1)
+            {
+                risposta2Txt.text = domandePadre[domandaRNG].rispostaGiusta;
+                RS1RNG = UnityEngine.Random.Range(0, domandePadre[domandaRNG].risposteSbagliate.Length);
+                RS2RNG = UnityEngine.Random.Range(0, domandePadre[domandaRNG].risposteSbagliate.Length);
+                while (RS2RNG == RS1RNG)
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);
+                }
+                risposta1Txt.text = domandePadre[domandaRNG].risposteSbagliate[RS1RNG];
+                risposta3Txt.text = domandePadre[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+
+            if (slotRNG == 2)
+            {
+                risposta3Txt.text = domandePadre[domandaRNG].rispostaGiusta;
+                RS1RNG = UnityEngine.Random.Range(0, domandePadre[domandaRNG].risposteSbagliate.Length);
+                RS2RNG = UnityEngine.Random.Range(0, domandePadre[domandaRNG].risposteSbagliate.Length);
+                while (RS2RNG == RS1RNG)
+                {
+                    RS2RNG = UnityEngine.Random.Range(0, RS1RNG);
+                }
+                risposta1Txt.text = domandePadre[domandaRNG].risposteSbagliate[RS1RNG];
+                risposta2Txt.text = domandePadre[domandaRNG].risposteSbagliate[RS2RNG];
+            }
+        }
+    }
 }
