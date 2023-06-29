@@ -31,13 +31,14 @@ public class PressurePlate : MonoBehaviour
 
     private void Awake()
     {
+        materials = new Material[renderes.Length];
         for (int i = 0; i < renderes.Length; i++)
         {
             materials[i] = renderes[i].materials[materialPosition];
         }
 
-
-        baseColor = materials[0].GetColor("_EColor");
+        if(renderes.Length != 0)
+            baseColor = materials[0].GetColor("_EColor");
     }
 
     public bool IsTouching { get; private set; }
