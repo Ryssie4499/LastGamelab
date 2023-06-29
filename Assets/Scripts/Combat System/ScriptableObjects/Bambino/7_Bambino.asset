@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0c2bc2134c254eb439abab0e5dc64, type: 3}
   m_Name: 7_Bambino
   m_EditorClassIdentifier: 
-  domanda: "Don\u2019t you see your disappointing your parents? Think about it."
+  domanda: "Don\u2019t you see you're disappointing your parents? Think about it."
   rispostaGiusta: "You need to talk to your parents, don\u2019t be afraid to open
     up"
   risposteSbagliate:
