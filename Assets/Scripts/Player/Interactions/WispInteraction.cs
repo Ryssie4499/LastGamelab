@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public abstract class WispInteraction : Interaction
 {
     [SerializeField] protected Wisp wisp;
+    [SerializeField] private ParticleSystem particles;
 
     private InputAction action;
 
@@ -21,6 +22,8 @@ public abstract class WispInteraction : Interaction
     {
         if (!action.triggered) return;
 
+        particles.Play();
+
         Collider collider = GetClosestInteractable();
 
         if (collider == null)
@@ -35,7 +38,6 @@ public abstract class WispInteraction : Interaction
         else if (wisp == null || !wisp.isInTotem)
         {
             Interact(collider);
-            Debug.Log(collider.name);
         }
     }
 
