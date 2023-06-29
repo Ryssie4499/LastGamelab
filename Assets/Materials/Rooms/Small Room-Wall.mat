@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7afdcbe981791f14d9001e127aab5359, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ambient_Occlusion:
@@ -133,11 +133,13 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.21976593, g: 0.17587852, b: 0.9063317, a: 1}
-    - _Base_color: {r: 0.2917707, g: 0.76052475, b: 0.19461787, a: 1}
+    - _Base_color: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.2197659, g: 0.1758785, b: 0.9063317, a: 1}
     - _EColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tiling: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4940657801422461214
 MonoBehaviour:
