@@ -48,7 +48,6 @@ public class UICombat : MonoBehaviour
     public Image[] boss_hearts;
     public int boss_numOfHearts;
     #endregion
-    public GameObject[] enemies;
     public GameObject shadowLife;
     public GameObject bossLife;
     int randomIndex;
@@ -108,6 +107,7 @@ public class UICombat : MonoBehaviour
         foreach (var item in wisp)
         {
             item.Reset();
+            StatsManager.Instance.PlayerHealth = 5;
             StatsManager.Instance.BossHealth = 8;
         }
     }

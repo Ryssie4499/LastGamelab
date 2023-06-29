@@ -41,8 +41,8 @@ public class Boss : MonoBehaviour
                 ui.CombatCanvas.SetActive(false);
                 ui.bossLife.SetActive(false);
                 ui.shadowLife.SetActive(true);
-                //ui.player.transform.position = ui.combatOut.transform.position;
-                //ui.Teleport();
+                ui.player.transform.position = ui.combatOut.transform.position;
+                ui.Teleport();
                 StatsManager.Instance.TotalEnemyHealth = 6;
                 Destroy(gameObject);
             }

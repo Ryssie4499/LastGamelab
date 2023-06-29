@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        if (StatsManager.Instance.enemies.Count > 0)
+        if (StatsManager.Instance.enemies0.Count > 0 || StatsManager.Instance.enemies1.Count > 0 || StatsManager.Instance.enemies2.Count > 0)
             OnRandomChoice?.Invoke();
     }
     private void MakeDamage()

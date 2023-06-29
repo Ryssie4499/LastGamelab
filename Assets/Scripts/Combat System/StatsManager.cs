@@ -8,10 +8,11 @@ public class StatsManager : MonoBehaviour
     private static StatsManager instance;
     public static StatsManager Instance { get => instance; private set => instance = value; }
 
-    public int PlayerHealth { get; private set; }
+    public int PlayerHealth { get; set; }
     public int TotalEnemyHealth { get; set; }
     public int BossHealth { get; set; }
-    public List<EnemyNormalInt> enemies;
+    UICombat ui;
+    public List<EnemyNormalInt> enemies0, enemies1, enemies2;
     int randomicNumber;
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class StatsManager : MonoBehaviour
         PlayerHealth = 5;
         TotalEnemyHealth = 6;
         BossHealth = 8;
+        ui = FindObjectOfType<UICombat>();
     }
     private void OnEnable()
     {
@@ -36,12 +38,30 @@ public class StatsManager : MonoBehaviour
     }
     private void Update()
     {
-        for (int i = 0; i < enemies.Count; i++)
+        if (ui.zona == Area.Bambino)
         {
-            if (enemies[i] == null)
-                enemies.RemoveAt(i);
+            for (int i = 0; i < enemies0.Count; i++)
+            {
+                if (enemies0[i] == null)
+                    enemies0.RemoveAt(i);
+            }
         }
-        
+        else if (ui.zona == Area.Madre)
+        {
+            for (int i = 0; i < enemies1.Count; i++)
+            {
+                if (enemies1[i] == null)
+                    enemies1.RemoveAt(i);
+            }
+        }
+        else if (ui.zona == Area.Padre)
+        {
+            for (int i = 0; i < enemies2.Count; i++)
+            {
+                if (enemies2[i] == null)
+                    enemies2.RemoveAt(i);
+            }
+        }
     }
     public void RandomicChoiceOfEnemy()
     {
@@ -50,8 +70,24 @@ public class StatsManager : MonoBehaviour
     IEnumerator timerBeforeChoice()
     {
         yield return new WaitForSeconds(0.1f);
-        int i = UnityEngine.Random.Range(0, enemies.Count-1);
-        enemies[i].GetComponent<EnemyNormalInt>().selected = true;
-        Debug.Log("Chosen " + i);
+        if (ui.zona == Area.Bambino)
+        {
+            int i = UnityEngine.Random.Range(0, enemies0.Count - 1);
+            enemies0[i].GetComponent<EnemyNormalInt>().selected = true;
+            Debug.Log("Chosen " + i);
+
+        }
+        else if (ui.zona == Area.Madre)
+        {
+            int i = UnityEngine.Random.Range(0, enemies1.Count - 1);
+            enemies1[i].GetComponent<EnemyNormalInt>().selected = true;
+            Debug.Log("Chosen " + i);
+        }
+        else if (ui.zona == Area.Padre)
+        {
+            int i = UnityEngine.Random.Range(0, enemies2.Count - 1);
+            enemies2[i].GetComponent<EnemyNormalInt>().selected = true;
+            Debug.Log("Chosen " + i);
+        }
     }
 }
