@@ -31,12 +31,13 @@ public class PressurePlate : MonoBehaviour
 
     private void Awake()
     {
+        materials = new Material[renderes.Length];
         for (int i = 0; i < renderes.Length; i++)
         {
             materials[i] = renderes[i].materials[materialPosition];
         }
 
-        if(materials.Length != 0)
+        if(renderes.Length != 0)
             baseColor = materials[0].GetColor("_EColor");
     }
 
