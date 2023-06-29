@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: 10_Madre
   m_EditorClassIdentifier: 
   domanda: "It\u2019s your fault if he feels abandoned."
-  rispostaGiusta: 
-  risposteSbagliate: []
+  rispostaGiusta: Things happens, this is the right thing to do, you can still take
+    care of him
+  risposteSbagliate:
+  - "You woke up the boy, went to work, did some work at home\u2026it\u2019s all
+    right"
+  - "Don\u2019t worry, you\u2019ll find the time express him your feelings"
+  - You did everything, just take some time and find your balance
+  - Relax, face the problem with them, you can do it
+  - "It\u2019s ok to discuss with your husband. Be more open with him, talk."
+  - You are over worrying again, calm down, you did nothing wrong
+  - You should have some time for yourself, nothing bad about it
+  - He will understand. He will grow up and understand
+  - "When the time is right, you will talk to him and tell him what happened, it\u2019s
+    ok"

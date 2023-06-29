@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: 9_Padre
   m_EditorClassIdentifier: 
   domanda: "I can\u2019t watch after both of you, we need to talk."
-  rispostaGiusta: 
-  risposteSbagliate: []
+  rispostaGiusta: "Take responsibility, don\u2019t hide the problem"
+  risposteSbagliate:
+  - You know you have to stop. One step at a time
+  - You should be closer with your wife, she cares about you
+  - You have all the time. And you love him too, do the right thing
+  - "Don\u2019t overreact, he\u2019s looking for guidance, remember that"
+  - You know you will enjoy playing with him
+  - "Be nice to him, don\u2019t be rude"
+  - Spend some time with him. He deserves it
+  - "It\u2019s ok. Time for yourself too"
+  - You can make it, bite the bullet, keep going

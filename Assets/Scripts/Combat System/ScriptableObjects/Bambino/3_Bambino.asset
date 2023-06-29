@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: 3_Bambino
   m_EditorClassIdentifier: 
   domanda: You are a waste of time, are you even listening?
-  rispostaGiusta: 
-  risposteSbagliate: []
+  rispostaGiusta: "You are fine, don\u2019t mind these screams too much"
+  risposteSbagliate:
+  - Keep going, keep training
+  - "Don\u2019t hide it. Not this time"
+  - "Keep your mind on the goal, don\u2019t lose your focus"
+  - "You are prepared, don\u2019t give them credit"
+  - "Don\u2019t respond to that\u2026"
+  - "You need to talk to your parents, don\u2019t be afraid to open up"
+  - You did the work at home, you are ready
+  - "It will work the next time. You\u2019ll be prepared"
+  - "Don\u2019t mind them. Focus on where you want to be"

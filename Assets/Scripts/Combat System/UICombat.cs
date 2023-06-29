@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Linq;
 
+public enum Area
+{
+    Bambino,
+    Madre,
+    Padre
+}
 public class UICombat : MonoBehaviour
 {
     public static event Action OnRightChoice;
@@ -49,12 +55,15 @@ public class UICombat : MonoBehaviour
     InputManager inputManager;
     CamManager cM;
 
-    public bool bambino, madre, padre;
     public List<domandeSO> domandeBambino;
     public List<domandeSO> domandeMadre;
     public List<domandeSO> domandePadre;
     int domandaRNG;
     int slotRNG;
+    public Area zona;
+
+    public GameObject player;
+    public Transform firstCombatIn, secondCombatIn, thirdCombatIn, combatOut;
     private void Awake()
     {
         wisp = FindObjectsOfType<Wisp>();
@@ -75,6 +84,19 @@ public class UICombat : MonoBehaviour
             IceChoice();
             RockChoice();
             HealthSystem();
+        }
+        //bambino, madre, padre...
+        if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Bambino)
+        {
+            player.transform.position = firstCombatIn.position;
+        }
+        if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Madre)
+        {
+            player.transform.position = secondCombatIn.position;
+        }
+        if (wisp[0].isInTotem && wisp[1].isInTotem && wisp[2].isInTotem && zona == Area.Padre)
+        {
+            player.transform.position = thirdCombatIn.position;
         }
     }
     #region Damage
@@ -316,7 +338,7 @@ public class UICombat : MonoBehaviour
     int RS1RNG, RS2RNG;
     void CreateQuestionsAndAnswers()
     {
-        if (bambino == true)
+        if (zona == Area.Bambino)
         {
 
             slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
@@ -362,7 +384,7 @@ public class UICombat : MonoBehaviour
             }
         }
 
-        if (madre == true)
+        if (zona == Area.Madre)
         {
 
             slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta
@@ -408,7 +430,7 @@ public class UICombat : MonoBehaviour
             }
         }
 
-        if (padre == true)
+        if (zona == Area.Padre)
         {
 
             slotRNG = UnityEngine.Random.Range(0, 3);                                                                   //creo uno slot randomico in cui può finire la risposta giusta

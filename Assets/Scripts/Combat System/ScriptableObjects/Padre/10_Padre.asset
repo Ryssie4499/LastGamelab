@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: 10_Padre
   m_EditorClassIdentifier: 
   domanda: I hope you will be better without me. I really wish it, for him.
-  rispostaGiusta: 
-  risposteSbagliate: []
+  rispostaGiusta: You can make it, bite the bullet, keep going
+  risposteSbagliate:
+  - You know you have to stop. One step at a time
+  - You should be closer with your wife, she cares about you
+  - You have all the time. And you love him too, do the right thing
+  - "Don\u2019t overreact, he\u2019s looking for guidance, remember that"
+  - You know you will enjoy playing with him
+  - "Be nice to him, don\u2019t be rude"
+  - Spend some time with him. He deserves it
+  - "It\u2019s ok. Time for yourself too"
+  - "Take responsibility, don\u2019t hide the problem"

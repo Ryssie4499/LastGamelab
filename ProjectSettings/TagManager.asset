@@ -7,6 +7,9 @@ TagManager:
   - PressurePlate
   - Totem
   - ResetArea
+  - Area1
+  - Area2
+  - Area3
   layers:
   - Default
   - TransparentFX

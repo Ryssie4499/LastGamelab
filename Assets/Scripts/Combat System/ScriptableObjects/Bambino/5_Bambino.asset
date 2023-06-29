@@ -14,5 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   domanda: "You can\u2019t pass the test, you are not good enough. It\u2019s that
     simple."
-  rispostaGiusta: 
-  risposteSbagliate: []
+  rispostaGiusta: "You are prepared, don\u2019t give them credit"
+  risposteSbagliate:
+  - Keep going, keep training
+  - "Don\u2019t hide it. Not this time"
+  - "You are fine, don\u2019t mind these screams too much"
+  - "Keep your mind on the goal, don\u2019t lose your focus"
+  - "Don\u2019t respond to that\u2026"
+  - "You need to talk to your parents, don\u2019t be afraid to open up"
+  - You did the work at home, you are ready
+  - "It will work the next time. You\u2019ll be prepared"
+  - "Don\u2019t mind them. Focus on where you want to be"

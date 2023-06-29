@@ -41,6 +41,7 @@ public class StatsManager : MonoBehaviour
             if (enemies[i] == null)
                 enemies.RemoveAt(i);
         }
+        
     }
     public void RandomicChoiceOfEnemy()
     {

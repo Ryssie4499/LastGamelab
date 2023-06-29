@@ -15,10 +15,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform mesh;
 [SerializeField] Animator anim;
+
+    UICombat ui;
     void Start()
     {
         iM = GameManager.Instance.IM;
         rb = GetComponent<Rigidbody>();
+        ui = FindObjectOfType<UICombat>();
         offset = new Vector3(1, 0, 1);
     }
 
@@ -92,6 +95,22 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool("Moving", false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Area1"))
+        {
+            ui.zona = Area.Bambino;
+        }
+        else if(other.CompareTag("Area2"))
+        {
+            ui.zona = Area.Madre;
+        }
+        else if(other.CompareTag("Area2"))
+        {
+            ui.zona = Area.Padre;
         }
     }
 }

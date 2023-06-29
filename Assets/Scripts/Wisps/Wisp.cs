@@ -48,7 +48,6 @@ public class Wisp : MonoBehaviour
 
     private void Update()
     {
-
         if (isInTotem && !isInCombat)
         {
             agent.SetDestination(TotemSphere.position);
