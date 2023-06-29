@@ -8,14 +8,9 @@ public abstract class Interaction : MonoBehaviour
     [SerializeField] private Vector3 hitboxPosition;
     [SerializeField] private Vector3 hitboxDimension;
 
-    private PlayerController controller;
+    [SerializeField] private PlayerController controller;
 
     protected InputManager inputManager;
-
-    private void Awake()
-    {
-        controller = GetComponent<PlayerController>();
-    }
 
     protected void Start()
     {
