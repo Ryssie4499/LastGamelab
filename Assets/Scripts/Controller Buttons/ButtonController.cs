@@ -10,10 +10,11 @@ public class ButtonController : MonoBehaviour
 
     [SerializeField] List<buttonFunctionsSO> functions;
     [SerializeField] List<Image> button;
+    [SerializeField] List<GameObject> CombatButtons;
     UIButtons buttons;
     UICombat combatButton;
     InputManager iM;
-
+    [SerializeField] bool combat;
 
 
     void Start()
@@ -28,8 +29,15 @@ public class ButtonController : MonoBehaviour
     {
         ControllIndex();
 
-
+        if (combat)
+        {
+            HighlightCombatButton();
+        }
+        else
+        {
             HighlightButton();
+        }
+
             if (iM.SelectWithController.triggered)
             {
                 RunButton();
@@ -91,13 +99,38 @@ public class ButtonController : MonoBehaviour
         }
         else if (iM.AnyKeybord.triggered)
         {
-            for (int i = 0; i < button.Count - 1; i++)
+            for (int i = 0; i < button.Count; i++)
             {
                 button[i].color = Color.white;
             }
         }
     }
 
+
+    void HighlightCombatButton()
+    {
+        if (iM.UpMenu.triggered || iM.downMenu.triggered)
+        {
+            for (int i = 0; i < CombatButtons.Count; i++)
+            {
+                if (i == index)
+                {
+                    CombatButtons[i].SetActive(true);
+                }
+                else
+                {
+                    CombatButtons[i].SetActive(false);
+                }
+            }
+        }
+        else if (iM.AnyKeybord.triggered)
+        {
+            for (int i = 0; i < CombatButtons.Count; i++)
+            {
+                CombatButtons[i].SetActive(false);
+            }
+        }
+    }
     void RunButton()
     {
         functions[index].RunButton(buttons,combatButton);
