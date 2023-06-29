@@ -43,6 +43,7 @@ public class Boss : MonoBehaviour
                 ui.shadowLife.SetActive(true);
                 //ui.player.transform.position = ui.combatOut.transform.position;
                 //ui.Teleport();
+                StatsManager.Instance.TotalEnemyHealth = 6;
                 Destroy(gameObject);
             }
         }

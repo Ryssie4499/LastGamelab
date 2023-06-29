@@ -108,6 +108,7 @@ public class UICombat : MonoBehaviour
         foreach (var item in wisp)
         {
             item.Reset();
+            StatsManager.Instance.BossHealth = 8;
         }
     }
     #region Damage
@@ -217,6 +218,7 @@ public class UICombat : MonoBehaviour
                 if (wisp[i].typeOfWisp == TypeOfWisp.Rock)
                     wisp[i].attack = true;
             }
+            mistakesCounter = 0;
             MakeDamage(1);
         }
         else
@@ -250,6 +252,7 @@ public class UICombat : MonoBehaviour
                 if (wisp[i].typeOfWisp == TypeOfWisp.Ice)
                     wisp[i].attack = true;
             }
+            mistakesCounter = 0;
             MakeDamage(1);
         }
         else
@@ -283,6 +286,7 @@ public class UICombat : MonoBehaviour
                 if (wisp[i].typeOfWisp == TypeOfWisp.Fire)
                     wisp[i].attack = true;
             }
+            mistakesCounter = 0;
             MakeDamage(1);
         }
         else
