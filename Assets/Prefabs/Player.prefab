@@ -279,6 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  rotationSpeed: 0
+  mesh: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &5155358566484600695
 MonoBehaviour:
   m_ObjectHideFlags: 0

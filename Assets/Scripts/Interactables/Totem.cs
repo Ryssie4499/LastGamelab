@@ -8,16 +8,35 @@ public class Totem : MonoBehaviour
     [SerializeField] private Transform wispRestingPoint;
     [SerializeField] private Door door;
 
+    [SerializeField, ColorUsage(true, true)] private Color litColor;
+
+    [Header("References")]
+    [SerializeField] private MeshRenderer ballRenderer;
+    [SerializeField] private int ballMaterialPosition = 1;
+
     public Transform WispRestingPoint { get => wispRestingPoint; }
+
+    private Vector4 baseColor;
+    private Material sphereMaterial;
+    private void Awake()
+    {
+        sphereMaterial = ballRenderer.materials[ballMaterialPosition];
+
+        baseColor = sphereMaterial.GetColor("_EColor");
+    }
 
     public void Activate()
     {
-        door.Open();
-
+        if(door != null)
+            door.Open();
+        sphereMaterial.SetColor("_EColor", litColor);
     }
     public void Deactivate()
     {
-        door.Close();
+        if(door != null)
+            door.Close();
+
+        sphereMaterial.SetColor("_EColor", baseColor);
     }
 
 #if UNITY_EDITOR
