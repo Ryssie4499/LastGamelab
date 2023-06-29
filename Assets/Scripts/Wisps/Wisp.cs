@@ -148,7 +148,7 @@ public class Wisp : MonoBehaviour
 
     public void Reset()
     {
+        agent.Warp(followPoint.position);
         agent.SetDestination(followPoint.position);
-        transform.position = followPoint.position;
     }
 }

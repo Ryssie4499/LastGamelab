@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: 1_Bambino
   m_EditorClassIdentifier: 
   domanda: You'll never make it to the school football team, you're too weak!
-  rispostaGiusta: 
-  risposteSbagliate: []
+  rispostaGiusta: Keep going, keep training
+  risposteSbagliate:
+  - "Don\u2019t hide it. Not this time"
+  - "You are fine, don\u2019t mind these screams too much"
+  - "Keep your mind on the goal, don\u2019t lose your focus"
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 

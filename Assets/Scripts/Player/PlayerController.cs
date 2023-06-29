@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
 
 
-
     Vector3 movement;
     Vector3 offset;
     [SerializeField] float speed;
@@ -16,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform mesh;
 [SerializeField] Animator anim;
-
     void Start()
     {
         iM = GameManager.Instance.IM;
@@ -26,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
         if (GameManager.Instance.gameState == GameManager.GameState.inGame)
             MoveInputs();
     }
