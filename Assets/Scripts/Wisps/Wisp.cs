@@ -147,16 +147,16 @@ public class Wisp : MonoBehaviour
 
     public void Reset()
     {
-        //agent.enabled = false;
-        agent.ResetPath();
+        agent.enabled = false;
+        agent.transform.position = followPoint.position;
+
         Invoke(nameof(NavMeshTimer), 1);
     }
     
     void NavMeshTimer()
     {
         isInTotem = false;
-        agent.transform.position = followPoint.position;
         agent.SetDestination(followPoint.position);
-        //agent.enabled = true; 
+        agent.enabled = true; 
     }
 }
