@@ -1,18 +1,13 @@
 fileFormatVersion: 2
-guid: 2178ad4f22a9f9e459c29c1606a53990
+guid: cf126c62eaffafa43ba521d554894ad1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Vines
-    second: {fileID: 2100000, guid: 928cf7e0664746b45a56f7a9fc7cce5e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
-    materialName: 1
-    materialSearch: 2
+    materialName: 0
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
