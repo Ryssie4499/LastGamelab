@@ -3,11 +3,21 @@ guid: 1ce03db8cdf294949971996331b6c15b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puzzle-Wall
+    second: {fileID: 2100000, guid: 218e083b9a445dd40af45e4f20383c20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puzzle-Wall-Top
+    second: {fileID: 2100000, guid: 3a235dd90f1a8f64a8039204591f5263, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

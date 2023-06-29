@@ -36,8 +36,8 @@ public class PressurePlate : MonoBehaviour
             materials[i] = renderes[i].materials[materialPosition];
         }
 
-
-        baseColor = materials[0].GetColor("_EColor");
+        if(materials.Length != 0)
+            baseColor = materials[0].GetColor("_EColor");
     }
 
     public bool IsTouching { get; private set; }
