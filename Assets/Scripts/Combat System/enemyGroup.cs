@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyGroup : MonoBehaviour
 {
 
-    [SerializeField] List<EnemyNormalInt> enemies;
+    [SerializeField] List<EemyChecker> enemies;
     public bool inCombat;
     // Start is called before the first frame update
 
@@ -19,7 +19,7 @@ public class enemyGroup : MonoBehaviour
                 inCombat = true;
                 return;
             }
-            else
+            else if (!enemy.selected)
             {
                 inCombat = false;
             }

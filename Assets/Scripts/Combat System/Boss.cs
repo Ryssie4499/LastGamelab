@@ -9,6 +9,7 @@ public class Boss : MonoBehaviour
     UICombat ui;
     EnemyNormalInt boss;
     Renderer rend;
+    CamManager cM;
     private void OnEnable()
     {
         UICombat.OnRightChoice += MakeDamage;
@@ -21,6 +22,7 @@ public class Boss : MonoBehaviour
     {
         ui = FindObjectOfType<UICombat>();
         boss = GetComponent<EnemyNormalInt>();
+        cM = GameManager.Instance.CM;
         health = maxHealth;
     }
     private void Update()
@@ -35,6 +37,7 @@ public class Boss : MonoBehaviour
             if (health <= 0)
             {
                 GameManager.Instance.gameState = GameManager.GameState.inGame;
+                cM.changeToPlayerCam();
                 ui.CombatCanvas.SetActive(false);
                 ui.bossLife.SetActive(false);
                 ui.shadowLife.SetActive(true);

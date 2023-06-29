@@ -26,7 +26,7 @@ public class EnemyNormalInt : MonoBehaviour, INormalable
         {
             UI.CombatCanvas.SetActive(true);
             GameManager.Instance.gameState = GameManager.GameState.inCombat;
-            cM.changeToPlayerCam();
+            cM.changeToEnemyCam();
         }
         //if (enemy.selected == true)
         //{

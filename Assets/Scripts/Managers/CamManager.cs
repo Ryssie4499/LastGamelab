@@ -23,7 +23,7 @@ public class CamManager : MonoBehaviour
             group.CheckSelectedGroup();
         }
 
-        playerCam.SetActive(false);
+        //playerCam.SetActive(false);
 
         for (int i = 0; i < groups.Count; i++)
         {
@@ -46,7 +46,7 @@ public class CamManager : MonoBehaviour
             group.CheckSelectedGroup();
         }
 
-        playerCam.SetActive(true);
+        //playerCam.SetActive(true);
 
         foreach (var cam in enemyCams)
         {
