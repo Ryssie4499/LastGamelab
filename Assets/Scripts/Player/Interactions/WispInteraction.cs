@@ -22,7 +22,8 @@ public abstract class WispInteraction : Interaction
     {
         if (!action.triggered) return;
 
-        particles.Play();
+        if(wisp == null || !wisp.isInTotem)
+            particles.Play();
 
         Collider collider = GetClosestInteractable();
 
