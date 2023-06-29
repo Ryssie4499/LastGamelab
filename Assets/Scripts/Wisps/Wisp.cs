@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum TypeOfWisp
 {
@@ -36,9 +37,11 @@ public class Wisp : MonoBehaviour
     private float floatingOffset;
     public Coroutine coOrbitate;
 
+    private NavMeshAgent agent;
     Rigidbody playerRB;
     private void Awake()
     {
+        agent = GetComponent<NavMeshAgent>();
         playerRB = Player.GetComponent<Rigidbody>();
         height = mesh.position.y;
     }
@@ -47,7 +50,7 @@ public class Wisp : MonoBehaviour
     {
         if (isInTotem && !isInCombat)
         {
-            SetDestination(TotemSphere.position);
+            agent.SetDestination(TotemSphere.position);
         }
         else if (!isInTotem && !isInCombat)
         {
@@ -74,7 +77,7 @@ public class Wisp : MonoBehaviour
             //se si muove prende la tua destinazione
             if (!hasStopped)
             {
-                SetDestination(followPoint.position);
+                agent.SetDestination(followPoint.position);
 
             }
             //se non si muove orbita
@@ -91,10 +94,10 @@ public class Wisp : MonoBehaviour
             position.y = height + Mathf.Sin((seed + floatingOffset) * floatingFrequency) * floatingAmount;
             mesh.position = position;
             if (!attack)
-                SetDestination(followPoint.position);
+                agent.SetDestination(followPoint.position);
             if(attack)
             {
-                SetDestination(attackPosition.position);
+                agent.SetDestination(attackPosition.position);
                 timer += Time.deltaTime;
                 if (timer >= 1f)
                 {
@@ -120,7 +123,7 @@ public class Wisp : MonoBehaviour
     //gli resetto la destinazione e lo faccio ruotare attorno al player sull'asse y di 45° al secondo
     public void Orbitate()
     {
-        ResetPath();
+        agent.ResetPath();
         transform.RotateAround(Player.transform.position, Vector3.up, degreesPerSecond * Time.deltaTime);
     }
 
@@ -144,13 +147,16 @@ public class Wisp : MonoBehaviour
 
     public void Reset()
     {
-        isInTotem = false;
-        transform.position = followPoint.position;
-        SetDestination(followPoint.position);
+        //agent.enabled = false;
+        agent.ResetPath();
+        Invoke(nameof(NavMeshTimer), 1);
     }
-    void SetDestination(Vector3 vector)
+    
+    void NavMeshTimer()
     {
-        transform.position = vector;
-        transform.LookAt(vector);
+        isInTotem = false;
+        agent.transform.position = followPoint.position;
+        agent.SetDestination(followPoint.position);
+        //agent.enabled = true; 
     }
 }
